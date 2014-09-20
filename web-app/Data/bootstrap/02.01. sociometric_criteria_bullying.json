@@ -1,0 +1,35 @@
+{
+	sociometricCriterias: [
+		{
+			code: "bullying",
+			name: "Bullying",
+			description: "Bullying Sociometric Criteria",
+			responses: [
+				{
+					sequence: 1,
+					question: "bullying_aggressor",
+					color: "tile_red",
+					rgbHex: '#CB002D'	
+				},
+				{
+					sequence: 2,
+					question: "bullying_victim",
+					color: "tile_yellow",
+					rgbHex: '#FDD200'
+				},
+				{
+					sequence: 3,
+					question: "bullying_rejected",
+					color: "tile_blue",
+					rgbHex: '#304CE3'
+				},
+				{
+					sequence: 4,
+					question: "bullying_peacemaker",
+					color: "tile_orange",
+					rgbHex: '#F77A00'
+				}
+			]
+		}
+	]
+}

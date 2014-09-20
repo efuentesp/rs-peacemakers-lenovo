@@ -1,0 +1,807 @@
+{
+    surveys: [
+        {
+            code: "survey_continuous",
+            name: "Evaluación Continua",
+            questions: [
+                {
+                    code: "survey_continuous_1",
+                    sequence: 1,
+                    description: "¿Qué es el Bullying?",
+                    id: 32,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_1_1",
+                            description: "Un juego de niños que siempre ha existido y que no tiene mayores consecuencias",
+                            points: 0,
+                            id: 148
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_1_2",
+                            description: "Es un proceso mediante el cual un agresor o un grupo de agresores busca someter a sus víctimas por medio de estrategias como son: las críticas, las burlas, la exclusión, entre otras.",
+                            points: 1,
+                            id: 59
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_1_3",
+                            description: "Una manera de relacionarse que no se puede cambiar.",
+                            points: 0,
+                            id: 60
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_1_4",
+                            description: "Una corrida de toros",
+                            points: 0,
+                            id: 61
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_2",
+                    sequence: 2,
+                    description: "Cuando alguien te hace Bullying la razón es porque:",
+                    id: 33,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_2_1",
+                            description: "El bully no encuentra alternativas para brillar por sí mismo.",
+                            points: 1,
+                            id: 62
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_2_2",
+                            description: "Porque tú lo provocas y además tú tienes la culpa.",
+                            points: 0,
+                            id: 63
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_2_3",
+                            description: "Porque la vida es una lucha de poder.",
+                            points: 0,
+                            id: 64
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_2_4",
+                            description: "Porque tú eres tonto y él es listo.",
+                            points: 0,
+                            id: 65
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_2_5",
+                            description: "Es divertido y eres su amigo.",
+                            points: 0,
+                            id: 66
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_3",
+                    sequence: 3,
+                    description: "¿Cuáles son los sentimientos que experimenta alguien que está siendo víctima?",
+                    id: 34,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_3_1",
+                            description: "Risa, diversión, felicidad, satisfacción.",
+                            points: 0,
+                            id: 67
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_3_2",
+                            description: "Ternura, agrado, emoción.",
+                            points: 0,
+                            id: 68
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_3_3",
+                            description: "Tristeza, miedo, angustia, impotencia, frustración.",
+                            points: 1,
+                            id: 69
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_3_4",
+                            description: "Bien, mal, regular.",
+                            points: 0,
+                            id: 70
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_4",
+                    sequence: 4,
+                    description: "¿Cuál es la primera estrategia para protegerte del acoso?",
+                    id: 35,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_4_1",
+                            description: "Defenderte de tu agresor.",
+                            points: 0,
+                            id: 71
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_4_2",
+                            description: "Ignorarlo.",
+                            points: 0,
+                            id: 72
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_4_3",
+                            description: "Molestarlo.",
+                            points: 0,
+                            id: 73
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_4_4",
+                            description: "Contestarle ' tú más'",
+                            points: 0,
+                            id: 74
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_4_5",
+                            description: "Reconocer la máscara de un agresor y quién está jugando el rol de Bully.",
+                            points: 1,
+                            id: 75
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_5",
+                    sequence: 5,
+                    description: "Los agresores tienen poder porque:",
+                    id: 36,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_5_1",
+                            description: "Lo compró en una tiendita.",
+                            points: 0,
+                            id: 76
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_5_2",
+                            description: "Se lo encontró en un cofre del tesoro.",
+                            points: 0,
+                            id: 77
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_5_3",
+                            description: "Porque es muy inteligente.",
+                            points: 0,
+                            id: 78
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_5_4",
+                            description: "Porque no te das cuenta que su comportamiento es solo una máscara y por lo tanto se la crees.",
+                            points: 1,
+                            id: 79
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_5_5",
+                            description: "Porque su papá es rico y poderoso.",
+                            points: 0,
+                            id: 80
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_6",
+                    sequence: 6,
+                    description: "¿Cuáles son las características de la máscara de un agresor?",
+                    id: 37,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_6_1",
+                            description: "Es guapo, alto, fuerte.",
+                            points: 0,
+                            id: 81
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_6_2",
+                            description: "Su vida es perfecta, la mayoría de los que lo rodean son perdedores, no les afecta nada, lo que hacen ellos es lo que vale la pena hacer, siempre tienen la razón, son carismáticos, llama la atención.",
+                            points: 1,
+                            id: 82
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_6_3",
+                            description: "Es horrible, tiene una cicatriz en la cara, tiene ojos de diabloâ€¦",
+                            points: 0,
+                            id: 83
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_7",
+                    sequence: 7,
+                    description: "¿Cuáles son las características del mundo interno de un agresor?",
+                    id: 38,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_7_1",
+                            description: "Son compasivos, empáticos, congruentes, valientes, responsables.",
+                            points: 0,
+                            id: 84
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_7_2",
+                            description: "Son buenas gentes, simpáticos, exitosos, autónomos.",
+                            points: 0,
+                            id: 85
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_7_3",
+                            description: "Están atrapados en sus propios miedos, no soportan perder, no soportan la confrontación, no saben manejar los cambios, no soportan la frustración.",
+                            points: 1,
+                            id: 86
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_7_4",
+                            description: "Tienen autoestima baja y son inseguros.",
+                            points: 0,
+                            id: 87
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_8",
+                    sequence: 8,
+                    description: "¿Para qué sirve conocer las características de la máscara y del mundo interno de un agresor?",
+                    id: 39,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_8_1",
+                            description: "Para poder hacerle  lo mismo.",
+                            points: 0,
+                            id: 88
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_8_2",
+                            description: "Para entenderlo y saber cómo ser su amigo.",
+                            points: 0,
+                            id: 89
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_8_3",
+                            description: "No sirve para nada.",
+                            points: 0,
+                            id: 90
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_8_4",
+                            description: "Para modificar la idea que tienes de él y minimizar el miedo.",
+                            points: 1,
+                            id: 91
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_8_5",
+                            description: "Para parecerte a él.",
+                            points: 0,
+                            id: 92
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_9",
+                    sequence: 9,
+                    description: "La frase 'nadie tiene el poder de convertirte en sapo sólo por decir te que eres un sapo' sirve para:",
+                    id: 40,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_9_1",
+                            description: "Que no tengas miedo de convertirte en sapo.",
+                            points: 0,
+                            id: 93
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_9_2",
+                            description: "Que sepas que tú agresor no tiene el poder de convertirte en lo que dice que eres.",
+                            points: 1,
+                            id: 94
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_9_3",
+                            description: "Para que permitas que tu agresor te moleste, critique, excluyaâ€¦al fin que no te conviertes en sapo.",
+                            points: 0,
+                            id: 95
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_9_4",
+                            description: "Para que sepas que no es un mago.",
+                            points: 0,
+                            id: 96
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_10",
+                    sequence: 10,
+                    description: "El miedo que genera un agresor es:",
+                    id: 41,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_10_1",
+                            description: "Un defecto que tienes.",
+                            points: 0,
+                            id: 97
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_10_2",
+                            description: "Una enfermedad.",
+                            points: 0,
+                            id: 98
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_10_3",
+                            description: "Porque no eres valiente.",
+                            points: 0,
+                            id: 99
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_10_4",
+                            description: "Es solamente una idea de lo que crees que te puede pasar si no te sometes ante él.",
+                            points: 1,
+                            id: 100
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_10_5",
+                            description: "Un virus contagioso.",
+                            points: 0,
+                            id: 101
+                        },
+                        {
+                            sequence: 6,
+                            code: "survey_continuous_10_6",
+                            description: "Porque el agresor es 'TODO-PODEROSO'",
+                            points: 0,
+                            id: 102
+                        },
+                        {
+                            sequence: 7,
+                            code: "survey_continuous_10_7",
+                            description: "Porque tu papá y mamá son miedosos.",
+                            points: 0,
+                            id: 103
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_11",
+                    sequence: 11,
+                    description: "Ser una víctima por propia elección significa:",
+                    id: 42,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_11_1",
+                            description: "Rogarle al agresor para que te moleste.",
+                            points: 0,
+                            id: 104
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_11_2",
+                            description: "Disfrutar lo que se siente ser víctima.",
+                            points: 0,
+                            id: 105
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_11_3",
+                            description: "Que sea tu hobbie.",
+                            points: 0,
+                            id: 106
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_11_4",
+                            description: "No saber elegir desde ti, buscar la aceptación de tu agresor al costo de traicionarte, creer que el agresor tiene el poder de convertirte en sapo, pensar que: 'no puedes, tienes mala suerte,  te lo mereces'",
+                            points: 1,
+                            id: 107
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_12",
+                    sequence: 12,
+                    description: "¿Cuál es la diferencia entre ser víctima y ser victimizado?",
+                    id: 43,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_12_1",
+                            description: "El número de letras de las palabras.",
+                            points: 0,
+                            id: 108
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_12_2",
+                            description: "Ninguna.",
+                            points: 0,
+                            id: 109
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_12_3",
+                            description: "Ser victimizado es por tonto y ser víctima es por cobarde.",
+                            points: 0,
+                            id: 110
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_12_4",
+                            description: "Ser victimizado es una acción fuera de tu control y ser víctima es cuando tú mismo te lo crees.",
+                            points: 1,
+                            id: 111
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_12_5",
+                            description: "Riéndote y haciendo fiestas de todo lo que dice y lo que hace.",
+                            points: 0,
+                            id: 112
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_13",
+                    sequence: 13,
+                    description: "¿ Cómo puedes conseguir la aceptacion de un agresor ?",
+                    id: 44,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_13_1",
+                            description: "Riéndote y haciendo fiestas de todo lo que dice y lo que hace.",
+                            points: 0,
+                            id: 112
+                        },                    
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_13_2",
+                            description: "Dándole regalos.",
+                            points: 0,
+                            id: 113
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_13_3",
+                            description: "Invitándole a comer a tu casa.",
+                            points: 0,
+                            id: 114
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_13_4",
+                            description: "Haciendo todo lo que te dice que hagas.",
+                            points: 0,
+                            id: 115
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_13_5",
+                            description: "Cambiando tu forma de ser.",
+                            points: 0,
+                            id: 116
+                        },
+                        {
+                            sequence: 6,
+                            code: "survey_continuous_13_6",
+                            description: "No la puedes conseguir.",
+                            points: 1,
+                            id: 117
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_14",
+                    sequence: 14,
+                    description: "¿Qué es la asertividad?",
+                    id: 45,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_14_1",
+                            description: "Es atinarle a la respuesta que tienes que decir.",
+                            points: 0,
+                            id: 118
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_14_2",
+                            description: "Es defenderte haciendo lo mismo que te hacen.",
+                            points: 0,
+                            id: 119
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_14_3",
+                            description: "Es dañar a los demás sin que te importe.",
+                            points: 0,
+                            id: 120
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_14_4",
+                            description: "Es la capacidad para autoafirmarse y defender los derechos propios sin agredir a los demás.",
+                            points: 1,
+                            id: 121
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_15",
+                    sequence: 15,
+                    description: "¿Cuáles son las estrategias de control que utilizan los agresores?",
+                    id: 46,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_15_1",
+                            description: "Dispararte con una pistola.",
+                            points: 0,
+                            id: 122
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_15_2",
+                            description: "Ser tu amigo y respetarte.",
+                            points: 0,
+                            id: 123
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_15_3",
+                            description: "La aceptación y la empatía.",
+                            points: 0,
+                            id: 124
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_15_4",
+                            description: "La crítica, la burla, el chantaje, la manipulación, la exclusión, la mentira, la coerción, los insultos, etc.",
+                            points: 1,
+                            id: 125
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_16",
+                    sequence: 16,
+                    description: "¿Para que utiliza todas las estrategias el agresor?",
+                    id: 47,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_16_1",
+                            description: "Para divertirse.",
+                            points: 0,
+                            id: 126
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_16_2",
+                            description: "Para ser tu amigo.",
+                            points: 0,
+                            id: 127
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_16_3",
+                            description: "Porque así se lleva.",
+                            points: 0,
+                            id: 128
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_16_4",
+                            description: "Para que te sometas ante él y te controle.",
+                            points: 1,
+                            id: 129
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_17",
+                    sequence: 17,
+                    description: "¿Para qué te sirve saber que atrás de las estrategias que utiliza el agresor  lo que busca es que te sometas?",
+                    id: 48,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_17_1",
+                            description: "Sólo por saber.",
+                            points: 0,
+                            id: 130
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_17_2",
+                            description: "Para que te sometas más rápido.",
+                            points: 0,
+                            id: 131
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_17_3",
+                            description: "Para que te hagas consciente de la intención y elijas si lo crees o no.",
+                            points: 1,
+                            id: 132
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_17_4",
+                            description: "Para que tu le hagas lo mismo.",
+                            points: 0,
+                            id: 133
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_17_5",
+                            description: "Para que le digas que ya sabes sus intenciones.",
+                            points: 0,
+                            id: 134
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_18",
+                    sequence: 18,
+                    description: "¿Qué son los pensamientos autodespreciativos?",
+                    id: 49,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_18_1",
+                            description: "Son pensamientos con groserías.",
+                            points: 0,
+                            id: 135
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_18_2",
+                            description: "Son sueños de media noche.",
+                            points: 0,
+                            id: 136
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_18_3",
+                            description: "Son ideas que no afectan en nada.",
+                            points: 0,
+                            id: 137
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_18_4",
+                            description: "Es un diálogo interno que te afecta de manera negativa en la manera en que te relacionas contigo mismo.",
+                            points: 1,
+                            id: 138
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_19",
+                    sequence: 19,
+                    description: "¿Cómo te pueden afectar los pensamientos autodespreciativos?",
+                    id: 50,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_19_1",
+                            description: "De ninguna manera.",
+                            points: 0,
+                            id: 139
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_19_2",
+                            description: "Te acabas convirtiendo en lo que piensas de ti.",
+                            points: 1,
+                            id: 140
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_19_3",
+                            description: "Se te mueren las neuronas.",
+                            points: 0,
+                            id: 141
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_19_4",
+                            description: "Te fortalecen.",
+                            points: 0,
+                            id: 142
+                        }
+                    ]
+                },
+                {
+                    code: "survey_continuous_20",
+                    sequence: 20,
+                    description: "¿En dónde encuentras la felicidad?",
+                    id: 51,
+                    answerChoices: [
+                        {
+                            sequence: 1,
+                            code: "survey_continuous_20_1",
+                            description: "En ti mismo.",
+                            points: 1,
+                            id: 143
+                        },
+                        {
+                            sequence: 2,
+                            code: "survey_continuous_20_2",
+                            description: "En la tiendita de la esquina.",
+                            points: 0,
+                            id: 144
+                        },
+                        {
+                            sequence: 3,
+                            code: "survey_continuous_20_3",
+                            description: "Tus papás te la regalan.",
+                            points: 0,
+                            id: 145
+                        },
+                        {
+                            sequence: 4,
+                            code: "survey_continuous_20_4",
+                            description: "En la aceptación de tu agresor.",
+                            points: 0,
+                            id: 146
+                        },
+                        {
+                            sequence: 5,
+                            code: "survey_continuous_20_5",
+                            description: "Cuando te traicionas.",
+                            points: 0,
+                            id: 147
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

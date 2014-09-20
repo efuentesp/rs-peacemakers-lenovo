@@ -1,0 +1,8 @@
+{
+    surveys: [
+        {
+            code: "survey_mobbing",
+            name: "¿Soy víctima de mobbing o acoso laboral?"
+        }
+    ]
+}

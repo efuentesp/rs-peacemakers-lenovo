@@ -1,0 +1,1272 @@
+{
+    schools: [
+        {
+            name: "ESCUELA PREPARATORIA OFICIAL NO. 148",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-MEX-NIC",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school1.edu.mx",
+                password: "admin"
+            },
+            groups: [
+                {
+                    name: "1ro. 1 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 2 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 3 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 4 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 1 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 2 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 3 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 4 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. 1 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. 2 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. 3 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. 4 MATUTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 1 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 2 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 3 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. 4 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 1 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 2 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 3 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. 4 VESPERTINO",
+                    groupType: "GROUP",
+                    stage: "Preparatoria",
+                    period: "2011-2012"
+                }
+            ]
+        },
+        {
+            name: "COLEGIO INTERNACIONAL",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school2.edu.mx",
+                password: "admin"
+            },
+            groups: [
+                {
+                    name: "5to B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do C",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do E",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro A ",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro C",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro D",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro C",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do D",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro E",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to D",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to C ",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                
+            ]
+        },
+        {
+            name: "EUGENIO DE MAZENOD",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school3.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "DRA. MARGARITA GOMEZ PALACIO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-DUR-DUR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school4.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "HECTOR MAYAGOITIA DOMINGUEZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-DUR-DUR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school5.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ESCUELA FEDERAL 21 DE MARZO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-DUR-DUR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school6.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SOLIDARIDAD",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-DUR-DUR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school7.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ITYC",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-BJU",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school8.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO MAHATMA GANDHI",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-COY",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school9.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO WINPENNY",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school10.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ESCUELA PREPARATORIA OFICIAL NO. 100",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-MEX-TEX",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school11.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "PREPARATORIA CAHUACAN",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-MEX-NIC",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school12.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO ATID",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school13.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "PINECREST",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school14.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO OXFORD BACHILLERATO",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school15.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ITYC PRIMARIA",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-BJU",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school16.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO VERMONT",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-MAG",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school17.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO QUEEN MARY",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUA",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school18.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO OXFORD FEMENIL",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school19.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA ANTONIA FRANCO DE LARA",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-MEX-TLA",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school20.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO WINPENNY CICLO 2011-2012",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school21.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "CENTRO ESCOLAR YAOCALLI",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-TLA",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school22.edu.mx",
+                password: "admin"
+            },
+            groups: [
+                {
+                    id: "196",
+                    name: "5to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2010-2011",
+                    
+                },
+                {
+                    id: "YAOCALLI-2012-5A",
+                    name: "5to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012",
+                    
+                },
+                {
+                    name: "5to. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012",
+                    sociometricTests: [
+                        {
+                            sociometricCriteria: "bullying",
+                            sequence: 1,
+                            sociometricTestResults: [
+                                
+                            ]
+                        },
+                        {
+                            sociometricCriteria: "bullying",
+                            sequence: 2,
+                            sociometricTestResults: [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "5to. C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "1ro. B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                
+            ]
+        },
+        {
+            name: "COLEGIO VERMONT EVALUACION",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-MAG",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school23.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "EMILIANO ZAPATA",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-MON",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school24.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "NEZAHUALCOYOTL",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-MON",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school25.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "CARLOS ESPINOSA ROMERO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-MON",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school26.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "APOLONIO M. AVILES",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school27.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SILVIA E. MORALES VILLAREAL",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school28.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ELBA ESTHER GORDILLO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school29.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA GRAL. 14",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school30.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 66",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school31.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 81",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school32.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ABEL SUAREZ DE LEON",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school33.edu.mx",
+                password: "admin"
+            },
+            groups: [
+                {
+                    name: "2do. A",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    id: "ABELSUAREZ-2012-2B",
+                    name: "2do. B",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012",
+                    
+                },
+                {
+                    name: "2do. C",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. D",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "2do. E",
+                    groupType: "GROUP",
+                    stage: "Secundaria",
+                    period: "2011-2012"
+                }
+            ]
+        },
+        {
+            name: "HEROICO COLEGIO MILITAR",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school34.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 72",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school35.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "JESUS ALFONSO ARREOLA",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school36.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA GENERAL 16",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school37.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 54",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school38.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 62",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school39.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA GENERAL 11",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school40.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 92",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school41.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "JOSE RODRIGUEZ GONZALEZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school42.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "FEDERICO HERNANDEZ MIRELES",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school43.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 28",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school44.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "BRAULIO CONTRERAS AMARO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school45.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "OTILIO GONZALEZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school46.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "HUMBERTO ELIZALDE JASSO",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school47.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "EULALIO GUTIERREZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school48.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 74",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-SAL",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school49.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "ELSA HERNANDEZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school50.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "SECUNDARIA TECNICA 75",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school51.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "CARLOS DELGADO LOPEZ",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school52.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "MOISES SAENZ GARZA",
+            groupType: "SCHOOL",
+            groupCategory: "PUBLIC",
+            geo: "MX-COA-TOR",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school53.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO VERMONT PRIMARIA",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school54.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "INSTITUTO OXFORD MASCULINO",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school55.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "COLEGIO EL ROBLE",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school56.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "WESTHILL INSTITUTE",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-CUJ",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school57.edu.mx",
+                password: "admin"
+            }
+        },
+        {
+            name: "CENTRO ESCOLAR CEDROS",
+            groupType: "SCHOOL",
+            groupCategory: "PRIVATE",
+            geo: "MX-DIF-ALV",
+            address: {
+                street: "Calle Desconocida"
+            },
+            adminUser: {
+                userid: "admin@school58.edu.mx",
+                password: "admin"
+            },
+            groups: [
+                {
+                    name: "3ro. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. D",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "3ro. E",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to. C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to. D",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "4to. E",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to. C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to. D",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "5to. E",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. A",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. B",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. C",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. D",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                },
+                {
+                    name: "6to. E",
+                    groupType: "GROUP",
+                    stage: "Primaria",
+                    period: "2011-2012"
+                }
+            ]
+        }
+    ]
+}

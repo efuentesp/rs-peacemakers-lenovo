@@ -1,0 +1,8 @@
+{
+    surveys: [
+        {
+            code: "survey_competency",
+            name: "Evaluación por Competencias"
+        }
+    ]
+}

@@ -1,0 +1,149 @@
+/* PHOTOS */
+img.photo_big {
+  width: 100px;
+  height: 120px;
+}
+img.photo {
+  width: 100px;
+  height: 120px;
+}
+img.photo_small {
+  width: 4em;
+  height: 5em;
+}
+
+img.photo_tiny {
+  width: 2em;
+  height: 2.5em;
+}
+
+ul.vote-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  //width: 800px;
+  //height: auto;
+  //position: relative;
+  //z-index: 10;
+}
+
+ul.vote-list li {
+  //display:inline;
+  background-color: white;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  height: auto;
+  float: left;
+  border: 1px solid #999;
+  margin: 0 15px 15px 0;
+  padding: 5px;
+}
+
+div.student-card {
+  margin: 2px;
+  //border: 1px solid #0000ff;
+}
+
+div.student-name {
+  text-align: center;
+  //font-weight: bold;
+  width: 200px;
+  height: 60px;
+  margin: 2px;
+}
+
+div.student-photo {
+	text-align: center;
+}
+
+#cardlist {
+	//position: relative;
+	 clear: both;
+}
+
+#cardlist ul#grid {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    //position: absolute;	
+}
+
+#cardlist li.card {
+  //display:inline;
+  background-color: white;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  height: 450px;
+  float: left;
+  border: 1px solid #999;
+  margin: 0 15px 15px 0;
+  padding: 5px;	
+}
+
+#cardlist li.item .cell {
+    padding: 9px 9px 7px;
+}
+
+.image-photo {
+    //display: inline-block;
+    //max-width: 100%;
+    //position: relative;
+    //horizontal-align: middle;
+    //vertical-align: bottom;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: block;
+    line-height: 1;
+    padding: 4px;    
+}
+
+
+
+.image-dropdown {
+    /*style the "box" in its minimzed state*/
+    border:1px solid black; width:120px; height:120px; overflow:hidden;
+    /*animate collapsing the dropdown from open to closed state (v. fast)*/
+    -moz-transition: height 0.1s; 
+    -webkit-transition: height 0.1s; 
+    -ms-transition: height 0.1s;  
+    -o-transition: height 0.1s;  
+    transition: height 0.1s;
+}
+.image-dropdown:hover {
+    /*when expanded, the dropdown will get native means of scrolling*/
+    height:240px; overflow-y:scroll;
+    /*nice and smooth expand - speed this up at your preference or remove animation altogether*/
+    -moz-transition: height 0.5s; 
+    -webkit-transition: height 0.5s; 
+    -ms-transition: height 0.5s;  
+    -o-transition: height 0.5s;  
+    transition: height 0.5s;
+}
+.image-dropdown input {
+    /*hide the nasty default radio buttons. like, completely!*/
+    position:absolute;top:0;left:0;opacity:0;
+}
+
+
+.image-dropdown label {
+    /*style the labels to look like dropdown options, kinda*/
+    display:none; margin:2px; height:120px; opacity:0.2; 
+    /*setting correct backgrounds - add additional rules with selectors based on "for" attribute, something like label[for=line2]{background-image:...}*/
+    background:url("fileupload/img/cover.gif");}
+.image-dropdown:hover label{
+    /*this is how labels render in the "expanded" state. we want to see only the selected radio button in the collapsed menu, and all of them when expanded*/
+    display:block;
+}
+.image-dropdown label:hover {
+    opacity:0.8;
+}
+.image-dropdown input:checked + label {
+    /*tricky! labels immediately following a checked radio button (with our markup they are semantically related) should be fully opaque regardless of hover, and they should always be visible (i.e. even in the collapsed menu*/
+    opacity:1 !important; display:block;
+}
+
+/*pfft, nothing as cool here, just the value trace*/
+#trace {margin:0 0 20px;}

@@ -1,0 +1,24 @@
+{
+    socialGroupStages: [
+        {
+            name: "Primaria"
+        },
+        {
+            name: "Secundaria"
+        },
+        {
+            name: "Preparatoria"
+        },
+        {
+            name: "Licenciatura"
+        }
+    ],
+    socialGroupPeriods: [
+        {
+            name: "2010-2011"
+        },
+        {
+            name: "2011-2012"
+        }
+    ]
+}

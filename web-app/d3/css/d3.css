@@ -1,0 +1,177 @@
+/* 11 buckets purple to red */
+
+.rbow2 .tile_default {
+	background: #EAEAEA;
+}
+
+.rbow2 .tile_yellow {
+	background: #FDD200;
+}
+
+.rbow2 .tile_blue {
+	background: #304CE3;
+}
+
+.rbow2 .tile_orange {
+	background: #F77A00;
+}
+
+.rbow2 .tile_red {
+	background: #CB002D;
+}
+
+
+
+#matrix {
+	clear: all;
+	margin-bottom: 20px;
+	/*height: 370px;*/
+	/*height: 285px;*/
+}
+
+#tiles {
+	font-size: 12px;
+	clear: both;
+}
+
+#tiles th {
+	vertical-align: top;
+	text-align:right;
+	padding: 1px;
+	color: #666;
+}
+
+#tiles tr th {
+	padding-top: 3px;
+}
+
+#tiles tr:first-child th {
+	padding-top: 3px;
+}
+
+#tiles td {
+	-webkit-perspective: 1000;
+}
+
+#tiles .tile {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.7s;
+}
+
+.face {
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	width: 18px;
+	height: 18px;
+	background: #eee;
+	border: 1px solid white;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+
+#tiles td.sel .face {
+	border-color: black;
+}
+
+.face.hidden {
+	display: none;
+}
+
+#tiles td.dim .screen {
+	opacity: 0.6;
+}
+
+.face.back {
+	-webkit-transform: rotateY(180deg);
+}
+
+.tile .screen {
+	background: white;
+	opacity: 0.0;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	z-index: 1337;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	border: 1px solid white;
+}
+
+
+
+
+.controls {
+	margin: 0 0 20px 7px;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.controls input {
+	display: none;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+
+.controls label {
+	float: left;
+	display: block;
+	cursor: pointer;
+	padding: 4px 6px;
+	background: #ddd;
+	border: 1px solid #ccc;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	margin: 0 3px 2px 0;
+	color: #888;
+}
+
+.controls label:hover {
+	background: #999;
+	color: white;
+	border: 1px solid #888;
+}
+
+.controls label.sel {
+	background: #444;
+	color: white;
+	border: 1px solid #333;
+	cursor: default;
+}
+
+/* Firefox - value portion of progress bar */
+progress::-moz-progress-bar {
+background-color: red;
+-moz-box-shadow: 1px 1px 1px #333333;
+}
+
+/* Chrome, Safari - value portion of progress bar */
+progress::-webkit-progress-value {
+  background-color: #f89406;
+  background-image: -moz-linear-gradient(left, #fbb450, #f89406);
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#fbb450), to(#f89406));
+  background-image: -webkit-linear-gradient(left, #fbb450, #f89406);
+  background-image: -o-linear-gradient(left, #fbb450, #f89406);
+  background-image: linear-gradient(to right, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=1);
+}
+
+/* All other attributes */
+progress {
+background-color: #F0F0F0;
+border: solid #808080 2px;
+border-radius: 5px;
+-moz-box-shadow: 3px 3px 3px #F0F0F0;
+-webkit-box-shadow: 3px 3px 3px #F0F0F0;
+box-shadow: 3px 3px 3px #F0F0F0;
+padding: 3px;
+width: 150px;
+height: 20px;
+}
+

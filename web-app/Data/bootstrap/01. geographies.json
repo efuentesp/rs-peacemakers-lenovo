@@ -1,0 +1,374 @@
+{
+    countries: [
+        {
+            isoCode: "MX",
+            name: "México",
+            geoType: "COUNTRY"
+        }
+    ],
+    states: [
+        {
+            isoCode: "MX-DIF",
+            name: "Distrito Federal",
+            abbreviation: "D.F.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-MEX",
+            name: "Estado de México",
+            abbreviation: "Mex.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-AGU",
+            name: "Aguascalientes",
+            abbreviation: "D.F.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-BCN",
+            name: "Baja California Norte",
+            abbreviation: "B.C.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-BCS",
+            name: "Baja California Sur",
+            abbreviation: "B.C.S.",
+            geoType: "STATE",
+            parent: "MX"
+            },        
+        {
+            isoCode: "MX-CAM",
+            name: "Campeche",
+            abbreviation: "Camp.",
+            geoType: "STATE",
+            parent: "MX"
+        },      
+        {
+            isoCode: "MX-COA",
+            name: "Coahuila",
+            abbreviation: "Coah.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-COL",
+            name: "Colima",
+            abbreviation: "Col.",
+            geoType: "STATE",
+            parent: "MX"
+        },                             
+        {
+            isoCode: "MX-CHP",
+            name: "Chiapas",
+            abbreviation: "Chis.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-CHH",
+            name: "Chihuahua",
+            abbreviation: "Chih.",
+            geoType: "STATE",
+            parent: "MX"
+        },                            
+        {
+            isoCode: "MX-DUR",
+            name: "Durango",
+            abbreviation: "Dgo.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-GUA",
+            name: "Guanajuato",
+            abbreviation: "Gto.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-GRO",
+            name: "Guerrero",
+            abbreviation: "Gro.",
+            geoType: "STATE",
+            parent: "MX"
+        },   
+        {
+            isoCode: "MX-HID",
+            name: "Hidalgo",
+            abbreviation: "Hgo.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-JAL",
+            name: "Jalisco",
+            abbreviation: "Jal.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-MIC",
+            name: "Michoacán",
+            abbreviation: "Mich.",
+            geoType: "STATE",
+            parent: "MX"
+        },                                   
+        {
+            isoCode: "MX-MOR",
+            name: "Morelos",
+            abbreviation: "Mor.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-NAY",
+            name: "Nayarit",
+            abbreviation: "Nay.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-NLE",
+            name: "Nuevo León",
+            abbreviation: "N.L.",
+            geoType: "STATE",
+            parent: "MX"
+        },  
+        {
+            isoCode: "MX-OAX",
+            name: "Oaxaca",
+            abbreviation: "Oax.",
+            geoType: "STATE",
+            parent: "MX"
+        },     
+        {
+            isoCode: "MX-PUE",
+            name: "Puebla",
+            abbreviation: "Pue.",
+            geoType: "STATE",
+            parent: "MX"
+        },  
+        {
+            isoCode: "MX-QUE",
+            name: "Querétaro",
+            abbreviation: "Qro.",
+            geoType: "STATE",
+            parent: "MX"
+        },  
+        {
+            isoCode: "MX-SLP",
+            name: "San Luis Potosí",
+            abbreviation: "S.L.P.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-SIN",
+            name: "Sinaloa",
+            abbreviation: "Sin.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-SON",
+            name: "Sonora",
+            abbreviation: "Son.",
+            geoType: "STATE",
+            parent: "MX"
+        },                    
+        {
+            isoCode: "MX-TAB",
+            name: "Tabasco",
+            abbreviation: "Tab.",
+            geoType: "STATE",
+            parent: "MX"
+        },        
+        {
+            isoCode: "MX-TAM",
+            name: "Tamaulipas",
+            abbreviation: "Tamps.",
+            geoType: "STATE",
+            parent: "MX"
+        },
+        {
+            isoCode: "MX-TLA",
+            name: "Tlaxcala",
+            abbreviation: "Tlax.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-VER",
+            name: "Veracruz",
+            abbreviation: "Ver.",
+            geoType: "STATE",
+            parent: "MX"
+        }, 
+        {
+            isoCode: "MX-YUC",
+            name: "Yucatán",
+            abbreviation: "Yuc.",
+            geoType: "STATE",
+            parent: "MX"
+        },   
+        {
+            isoCode: "MX-ZAC",
+            name: "Zacatecas",
+            abbreviation: "Zac.",
+            geoType: "STATE",
+            parent: "MX"
+        }                                                                         
+    ],
+    cities: [
+        {
+            isoCode: "MX-DIF-ALV",
+            name: "Alvaro Obregón",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-AZC",
+            name: "Azcapotzalco",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-BJU",
+            name: "Benito Juárez",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-COY",
+            name: "Coyoacán",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },                        
+        {
+            isoCode: "MX-DIF-CUJ",
+            name: "Cuajimalpa",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-CUA",
+            name: "Cuauhtémoc",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        }, 
+        {
+            isoCode: "MX-DIF-GAM",
+            name: "Gustavo A. Madero",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-IZC",
+            name: "Iztacalco",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-IZP",
+            name: "Iztapalapa",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        }, 
+        {
+            isoCode: "MX-DIF-MAG",
+            name: "Magdalena Contreras",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },  
+        {
+            isoCode: "MX-DIF-MHG",
+            name: "Miguel Hidalgo",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },   
+        {
+            isoCode: "MX-DIF-MIL",
+            name: "Milpa Alta",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-TLH",
+            name: "Tláhuac",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },                                                               
+        {
+            isoCode: "MX-DIF-TLA",
+            name: "Tlalpan",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },
+        {
+            isoCode: "MX-DIF-VEN",
+            name: "Venustiano Carranza",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        }, 
+        {
+            isoCode: "MX-DIF-XOC",
+            name: "Xochimilco",
+            geoType: "CITY",
+            parent: "MX-DIF"
+        },                 
+        {
+            isoCode: "MX-MEX-NIC",
+            name: "Nicolás Romero",
+            geoType: "CITY",
+            parent: "MX-MEX"
+        },
+        {
+            isoCode: "MX-MEX-TEX",
+            name: "Texcoco",
+            geoType: "CITY",
+            parent: "MX-MEX"
+        },
+        {
+            isoCode: "MX-MEX-TLA",
+            name: "Tlalnepantla",
+            geoType: "CITY",
+            parent: "MX-MEX"
+        },
+        {
+            isoCode: "MX-DUR-DUR",
+            name: "Durango",
+            geoType: "CITY",
+            parent: "MX-DUR"
+        },
+        {
+            isoCode: "MX-COA-MON",
+            name: "Moncolva",
+            geoType: "CITY",
+            parent: "MX-COA"
+        },
+        {
+            isoCode: "MX-COA-SAL",
+            name: "Saltillo",
+            geoType: "CITY",
+            parent: "MX-COA"
+        },
+        {
+            isoCode: "MX-COA-TOR",
+            name: "Torreón",
+            geoType: "CITY",
+            parent: "MX-COA"
+        },
+        {
+            isoCode: "MX-MOR-CUE",
+            name: "Cuernavaca",
+            geoType: "CITY",
+            parent: "MX-MOR"
+        }        
+    ]
+}
