@@ -394,7 +394,9 @@ class SociometricTestResultsController {
 		
 		def students = []
 		socialGroup.groupMembers.each { m->
-			students << m.getFullName()
+			if (m) {
+				students << m.getFullName()
+			}
 		}
 
 		[socialGroup: socialGroup, sociometricTests: sociometricTestArray, bullyingArray: bullyingArray, restURI: restURI, photoURL: photoURL, user: user, students: students as JSON, action: params.action]
