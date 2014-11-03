@@ -383,7 +383,7 @@ class SociometricTestResultsController {
 		}
 		def sociometricTestArray = [], bullyingArray = []
 		sociometricTests.each { sociometricTest ->
-			println ">> ${sociometricTest.sociometricCriteria.code}"
+			//println ">> ${sociometricTest.sociometricCriteria.code}"
 			if (sociometricTest.sociometricCriteria.code in ['classmate_want', 'classmate_guess']) {
 				sociometricTestArray << sociometricTest
 			}
@@ -394,7 +394,9 @@ class SociometricTestResultsController {
 		
 		def students = []
 		socialGroup.groupMembers.each { m->
-			students << m.getFullName()
+			if (m) {
+				students << m.getFullName()
+			}
 		}
 
 		[socialGroup: socialGroup, sociometricTests: sociometricTestArray, bullyingArray: bullyingArray, restURI: restURI, photoURL: photoURL, user: user, students: students as JSON, action: params.action]
@@ -409,11 +411,11 @@ class SociometricTestResultsController {
 		def json = barChartJSON(inParams)
 		
 		def datax = SociometricTestResultsService.buildGraph(params.id.toLong(), params.type, json, params.bullying)
-		//println "datax = " + datax
+		//println ">> datax = " + datax
 		
 		render datax as JSON
 	}
-	
+
 	def graphx() {
 		println "graph(): ${params}"
 		

@@ -9,6 +9,15 @@ import com.peacemakers.domain.SociometricTest;
 import com.peacemakers.domain.SociometricTestResult;
 import com.peacemakers.domain.SurveyAssigned;
 
+import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
+import edu.uci.ics.jung.algorithms.filters.KNeighborhoodFilter;
+import edu.uci.ics.jung.graph.Graph;
+import edu.uci.ics.jung.graph.DirectedSparseMultigraph;
+import edu.uci.ics.jung.graph.util.EdgeType;
+
+import com.peacemakers.domain.custom.graph.Node;
+import com.peacemakers.domain.custom.graph.Link;
+
 class SociometricTestResultsService {
 	def SurveyService
 
@@ -187,6 +196,18 @@ class SociometricTestResultsService {
 		def groupMembers = GroupMember.findAll {
 			socialGroup.id == socialGroupId
 		}
+
+		// Find all Sociometric Test Results from a Social Group which Sociometric Criteria is Classmate
+		//def sociometricTestResults = sociometricTest.sociometricTestResults
+		
+		def sociometricTestResults = SociometricTestResult.findAll(sort:"fromGroupMember") {
+			sociometricTest.id == sociometricTestId
+		}
+		//println sociometricTest
+		//println sociometricTestResultsx
+
+		
+
 		def i = 1
 		def groupMemberArray = []
 		groupMembers.each { groupMember ->
@@ -214,15 +235,6 @@ class SociometricTestResultsService {
 								surveyCuentaconmigo: surveyCuentaConmigoGroupMemberTotal? surveyCuentaConmigoGroupMemberTotal[cuentaconmigoTestIndex].cuentaconmigo : [sumCongruencia: 0, descriptionCongruencia: '', sumEmpatia: 0, descriptionEmpatia: '', sumAPI: 0, descriptionAPI: ''],
 								display: true]
 		}
-
-		// Find all Sociometric Test Results from a Social Group which Sociometric Criteria is Classmate
-		//def sociometricTestResults = sociometricTest.sociometricTestResults
-		
-		def sociometricTestResults = SociometricTestResult.findAll(sort:"fromGroupMember") {
-			sociometricTest.id == sociometricTestId
-		}
-		//println sociometricTest
-		//println sociometricTestResultsx
 		
 		// Create a matrix
 		def from, to, test
