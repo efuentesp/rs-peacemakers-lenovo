@@ -234,7 +234,7 @@
 						    <span class="caret"></span>
 					    </a>
 					    <ul class="dropdown-menu">
-							<li id="navBullying"><a id="bullying-chart">Bullying</a></li>
+							<li id="navBullying"><a id="bullying-chart">Ambiente Relacional</a></li>
 							<li id="navBullymetric"><a id="bullymetric-chart">Bullymetrica</a></li>
 							<li id="navCompetency"><a id="competency-chart">Competencias</a></li>
 							<li id="navCuentaConmigo"><a id="cuentaconmigo-chart">Cuenta Conmigo</a></li>
@@ -243,7 +243,7 @@
 				    <br>
 					
 					<div id="bulletchart">
-						<h5>Bullying</h5>
+						<h5>Ambiente Relacional</h5>
 					</div>
 					<div id="radar-chart" class="hidden">
 						<h5>Evaluación por Competencias</h5>
@@ -327,7 +327,7 @@
 									
 										<g:form class="form-horizontal">
 											<div class="control-group">
-												<label class="control-label" for="bullyingSelect">Bullying</label>
+												<label class="control-label" for="bullyingSelect">Ambiente Relacional</label>
 												<div class="controls">
 													<select id="bullyingSelect" disabled>
 														<g:each in="${bullyingArray}" var="bullying">

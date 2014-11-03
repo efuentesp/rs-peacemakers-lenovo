@@ -33,7 +33,7 @@ class SetupController {
 		println "index: ${params}"
 	}
 	
-    def geography() {
+  def geography() {
 		println "geography: ${params}"
 		
 		def file = request.getFile('jsonGeoUpload')
