@@ -206,7 +206,124 @@ class SociometricTestResultsService {
 		//println sociometricTest
 		//println sociometricTestResultsx
 
+		// -------------------------------------------------------------------------------------------------------------------
+
+		Graph graphClassmateWantYes = new DirectedSparseMultigraph<Node, Link>()
+		Graph graphClassmateWantNo = new DirectedSparseMultigraph<Node, Link>()
+
+		def vertex = []
+		groupMembers.each { v ->
+			vertex << new Node(v.id, v.person.firstName, "${v.person.firstSurname} ${v.person.secondSurname}")
+		}
+		//println "Vertex: ${vertex}"
+
+		def fromVertex, toVertex
+		def edge = []
+		sociometricTestResults.eachWithIndex { e, i ->
+			//println "[${i}] ${e}"
+			fromVertex = vertex.findIndexOf {
+				it.id == e.fromGroupMember.id
+			}
+			toVertex = vertex.findIndexOf {
+				it.id == e.toGroupMember.id
+			}
+			if (e.sociometricCriteriaResponse.question == 'classmate_want_yes') {
+			 graphClassmateWantYes.addEdge(new Link(i, 0, 0), vertex[fromVertex], vertex[toVertex])
+			}
+			if (e.sociometricCriteriaResponse.question == 'classmate_want_no') {
+			 graphClassmateWantNo.addEdge(new Link(i, 0, 0), vertex[fromVertex], vertex[toVertex])
+			}
+		}
+		//println "Graph: ${graphClassmateWantYes.toString()}"
+		//println "Graph: ${graphClassmateWantNo.toString()}"
+
+		def np = graphClassmateWantYes.getVertexCount() 
+		def nn = graphClassmateWantNo.getVertexCount()
+
+		def sumRp=0, sumRn=0, sumSp=0, sumSn=0
+		vertex.each { v->
+			def successorsYes = graphClassmateWantYes.getSuccessors(v)
+			def successorsNo = graphClassmateWantNo.getSuccessors(v)
+
+			def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
+			def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+
+			def joinYesYes=[], joinNoNo=[], joinYesNo=[], joinNoYes=[]
+			if (predecessorsYes) {
+				joinYesYes = successorsYes.intersect(predecessorsYes)
+				joinNoYes = successorsNo.intersect(predecessorsYes)
+			}
+			if (predecessorNo) {
+				joinNoNo = successorsNo.intersect(predecessorNo)
+				joinYesNo = successorsYes.intersect(predecessorNo)
+			}
+
+			def sp = graphClassmateWantYes.inDegree(v)
+			def sn = graphClassmateWantNo.inDegree(v)
+			def ep = graphClassmateWantYes.outDegree(v)
+			def en = graphClassmateWantNo.outDegree(v)
+			def rp = joinYesYes.size()
+			def rn = joinNoNo.size()
+			def os = joinYesNo.size() + joinNoYes.size()
+
+			sumRp += rp
+			sumRn += rn
+			sumSp += sp
+			sumSn += sn
+
+			def pop=0, expPlus=0
+			if (np > 1) {
+				pop = sp / (np - 1)
+				expPlus = ep / (np - 1)
+			}
+
+			def ant=0, expMinus=0
+			if (nn > 1) {
+				ant = sn / (nn - 1)
+				expMinus = en / (nn - 1)
+			}
+
+			def ca=0
+			if (sp > 0) {
+				ca = rp / sp
+			}
+
+			println "${v} : Sp=${sp}, Sn=${sn}, Ep=${ep}, En=${en}, Rp=${rp}, Rn=${rn}, Os=${os}"
+			println "       Pop=${pop}, Ant=${ant}, Exp+=${expPlus}, Exp-=${expMinus}, CA=${ca}"
+		}
+
+		def ia=0, iis=0
+		if (np > 1) {
+			ia = sumRp / (np * (np - 1))
+			iis = (sumSp + sumSn) / (np - 1)
+		}
+
+		def id=0
+		if (nn > 0) {
+			id = sumRn / (nn * (nn - 1))
+		}
 		
+		def ic = sumRn / sumSp
+
+		println "IA=${ia}, ID=${id}, IC=${ic}, IS=${iis}"
+
+/*		println ">>>> Successors"
+		vertex.each { v->
+			def successorsYes = graphClassmateWantYes.getSuccessors(v)
+			def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+			def joinYesNo = successorsYes.intersect(predecessorNo)
+			println "${v} : ${successorsYes} : ${predecessorNo} = ${joinYesNo}"
+		}
+
+		println ">>>> Predecesors"
+		vertex.each { v->
+			def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
+			def successorsNo = graphClassmateWantNo.getSuccessors(v)
+			def joinNoYes = predecessorsYes.intersect(successorsNo)
+			println "${v} : ${predecessorsYes} : ${successorsNo} = ${joinNoYes}"
+		}*/
+
+		// -------------------------------------------------------------------------------------------------------------------
 
 		def i = 1
 		def groupMemberArray = []

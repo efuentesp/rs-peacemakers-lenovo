@@ -12,6 +12,6 @@ class Node  {
 	}
 	
 	public String toString() {
-		return "V" + id
+		return "V${id}"
 	}
 }

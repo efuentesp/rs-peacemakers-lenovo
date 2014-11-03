@@ -7,13 +7,17 @@ class SociometricCriteriaResponseOption {
 	Integer sequence
 	String question
 
-    static constraints = {
+  static constraints = {
 		sequence (nullable: false)
 		question (blank: false, unique: true, matches: "[a-z_]+")
-    }
+  }
 	
 	static mapping = {
 		sort sequence: "desc"
 	}
 	
+	String toString() {
+		return "<(${id}) ${question}>"
+	} 
+
 }
