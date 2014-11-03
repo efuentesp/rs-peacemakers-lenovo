@@ -195,7 +195,7 @@ class SurveyService {
 	}
 	
 	def computeCuentaConmigoResults(surveyAssignedId, groupMemberId) {	
-		println "computeResults: ${surveyAssignedId} ${groupMemberId}"
+		//println "computeResults: ${surveyAssignedId} ${groupMemberId}"
 		def surveyAssigned = SurveyAssigned.get(surveyAssignedId)
 		def groupMember = GroupMember.get(groupMemberId)
 		//println "${surveyAssigned}  ${groupMember}"
