@@ -116,7 +116,7 @@ class SociometricTestResultsService {
 			//println "c: ${c}"
 			if (c.criteria.code == "bullying") {
 				def t = c.tests[c.tests.size()-1]
-				println("t="+t)
+				//println("t="+t)
 				if (bullying) {
 					c.tests.each { x->
 						if (x.test.id == bullying.toLong()) {
@@ -239,73 +239,98 @@ class SociometricTestResultsService {
 
 		def np = graphClassmateWantYes.getVertexCount() 
 		def nn = graphClassmateWantNo.getVertexCount()
+		//println "${np} ${nn}"
 
-		def sumRp=0, sumRn=0, sumSp=0, sumSn=0
-		vertex.each { v->
-			def successorsYes = graphClassmateWantYes.getSuccessors(v)
-			def successorsNo = graphClassmateWantNo.getSuccessors(v)
+		def sociometricGraph = []
+		def classroomGraph = [ id: 0, _ia: 0, _id: 0, _ic: 0, _is: 0 ]
 
-			def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
-			def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+		if (np > 0) {
+			def sumRp=0, sumRn=0, sumSp=0, sumSn=0
+			vertex.each { v->
+				println "${v} ${v.firstName} ${v.lastName}"
+				def successorsYes = graphClassmateWantYes.getSuccessors(v)
+				//successorsYes = successorsYes ? successorsYes : []
+				def successorsNo = graphClassmateWantNo.getSuccessors(v)
+				//successorsNo = successorsNo ? successorsNo : []
+				println "successorsYes: ${successorsYes}"
+				println "successorsNo: ${successorsNo}"
 
-			def joinYesYes=[], joinNoNo=[], joinYesNo=[], joinNoYes=[]
-			if (predecessorsYes) {
-				joinYesYes = successorsYes.intersect(predecessorsYes)
-				joinNoYes = successorsNo.intersect(predecessorsYes)
+				def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
+				//predecessorsYes = predecessorsYes ? predecessorsYes : []
+				def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+				//predecessorNo = predecessorNo ? predecessorNo : []
+				println "predecessorsYes: ${predecessorsYes}"
+				println "predecessorNo: ${predecessorNo}"
+
+				if (successorsYes != null && successorsNo != null && predecessorsYes != null && predecessorNo != null) {
+					def joinYesYes=[], joinNoNo=[], joinYesNo=[], joinNoYes=[]
+					if (predecessorsYes) {
+						joinYesYes = successorsYes.intersect(predecessorsYes)
+						joinNoYes = successorsNo.intersect(predecessorsYes)
+					}
+					if (predecessorNo) {
+						joinNoNo = successorsNo.intersect(predecessorNo)
+						joinYesNo = successorsYes.intersect(predecessorNo)
+					}
+
+					def sp = graphClassmateWantYes.inDegree(v)
+					def sn = graphClassmateWantNo.inDegree(v)
+					def ep = graphClassmateWantYes.outDegree(v)
+					def en = graphClassmateWantNo.outDegree(v)
+					def rp = joinYesYes.size()
+					def rn = joinNoNo.size()
+					def os = joinYesNo.size() + joinNoYes.size()
+
+					sumRp += rp
+					sumRn += rn
+					sumSp += sp
+					sumSn += sn
+
+					def pop=0, expPlus=0
+					if (np > 1) {
+						pop = sp / (np - 1)
+						expPlus = ep / (np - 1)
+					}
+
+					def ant=0, expMinus=0
+					if (nn > 1) {
+						ant = sn / (nn - 1)
+						expMinus = en / (nn - 1)
+					}
+
+					def ca=0
+					if (sp > 0) {
+						ca = rp / sp
+					}
+
+					def sGraph = [ id: v.id, _sp: sp, _sn: sn, _ep: ep, _en: en, _rp: rp, _rn: rn, _os: os,
+																_pop: pop, _ant: ant, _expPlus: expPlus, _expMinus: expMinus, _ca: ca ]
+					sociometricGraph << sGraph
+					println sGraph
+				}
+	/*			println "${v} : Sp=${sp}, Sn=${sn}, Ep=${ep}, En=${en}, Rp=${rp}, Rn=${rn}, Os=${os}"
+				println "       Pop=${pop}, Ant=${ant}, Exp+=${expPlus}, Exp-=${expMinus}, CA=${ca}"*/
 			}
-			if (predecessorNo) {
-				joinNoNo = successorsNo.intersect(predecessorNo)
-				joinYesNo = successorsYes.intersect(predecessorNo)
-			}
+			//println sociometricGraph
 
-			def sp = graphClassmateWantYes.inDegree(v)
-			def sn = graphClassmateWantNo.inDegree(v)
-			def ep = graphClassmateWantYes.outDegree(v)
-			def en = graphClassmateWantNo.outDegree(v)
-			def rp = joinYesYes.size()
-			def rn = joinNoNo.size()
-			def os = joinYesNo.size() + joinNoYes.size()
-
-			sumRp += rp
-			sumRn += rn
-			sumSp += sp
-			sumSn += sn
-
-			def pop=0, expPlus=0
+			def ia=0, iis=0
 			if (np > 1) {
-				pop = sp / (np - 1)
-				expPlus = ep / (np - 1)
+				ia = sumRp / (np * (np - 1))
+				iis = (sumSp + sumSn) / (np - 1)
 			}
 
-			def ant=0, expMinus=0
-			if (nn > 1) {
-				ant = sn / (nn - 1)
-				expMinus = en / (nn - 1)
+			def id=0
+			if (nn > 0) {
+				id = sumRn / (nn * (nn - 1))
 			}
+			
+			def ic = sumRn / sumSp
 
-			def ca=0
-			if (sp > 0) {
-				ca = rp / sp
-			}
-
-			println "${v} : Sp=${sp}, Sn=${sn}, Ep=${ep}, En=${en}, Rp=${rp}, Rn=${rn}, Os=${os}"
-			println "       Pop=${pop}, Ant=${ant}, Exp+=${expPlus}, Exp-=${expMinus}, CA=${ca}"
+			classroomGraph = [ id: socialGroupId, _ia: ia, _id: id, _ic: ic, _is: iis ]
 		}
 
-		def ia=0, iis=0
-		if (np > 1) {
-			ia = sumRp / (np * (np - 1))
-			iis = (sumSp + sumSn) / (np - 1)
-		}
-
-		def id=0
-		if (nn > 0) {
-			id = sumRn / (nn * (nn - 1))
-		}
-		
-		def ic = sumRn / sumSp
-
-		println "IA=${ia}, ID=${id}, IC=${ic}, IS=${iis}"
+		//println classroomGraph
+/*		println "IA=${ia}, ID=${id}, IC=${ic}, IS=${iis}"*/
 
 /*		println ">>>> Successors"
 		vertex.each { v->
@@ -341,6 +366,15 @@ class SociometricTestResultsService {
 			def cuentaconmigoTestIndex = surveyCuentaConmigoGroupMemberTotal.findIndexOf {
 				it.groupMember == groupMember
 			}
+
+			def sociometricGraphMember = sociometricGraph.find {
+				if (it.id == groupMember.id) {
+					return it
+				}
+				return false
+			}
+			//println sociometricGraphMember
+
 			//println "---> ${groupMember} ${surveyGroupMemberTotal[competencyTestIndex]}"
 			groupMemberArray << [id: groupMember.id,
 								name: groupMember.getFullName(),
@@ -350,6 +384,8 @@ class SociometricTestResultsService {
 								surveyBullymetric: surveyBullymetricGroupMemberTotal ? surveyBullymetricGroupMemberTotal[bullymetricTestIndex].bullymetric : [neap: 0, igap:0, imap: 0],
 								surveyCompetency: surveyGroupMemberTotal ? surveyGroupMemberTotal[competencyTestIndex].competency : [f1: 0, f2:0, f3: 0, f4: 0],
 								surveyCuentaconmigo: surveyCuentaConmigoGroupMemberTotal? surveyCuentaConmigoGroupMemberTotal[cuentaconmigoTestIndex].cuentaconmigo : [sumCongruencia: 0, descriptionCongruencia: '', sumEmpatia: 0, descriptionEmpatia: '', sumAPI: 0, descriptionAPI: ''],
+								sociometricGraph: (sociometricGraphMember ? sociometricGraphMember : [ id: groupMember.id, _sp: 0, _sn: 0, _ep: 0, _en: 0, _rp: 0, _rn: 0, _os: 0,
+																																											 _pop: 0, _ant: 0, _expPlus: 0, _expMinus: 0, _ca: 0 ] ),
 								display: true]
 		}
 		

@@ -204,7 +204,10 @@ $('#bullying-chart').click(function(event){
 	d3.select("#bullymetric").classed("hidden", true);
 	d3.select("#navBullymetric").classed("active", false);
 	d3.select("#cuentaconmigo").classed("hidden", true);
-	d3.select("#navCuentaConmigo").classed("active", false);	
+	d3.select("#navCuentaConmigo").classed("active", false);
+
+	d3.select("#sociometric-graph").classed("hidden", true);
+	d3.select("#navSociometricGraph").classed("active", false);	
 });
 
 $('#competency-chart').click(function(event){
@@ -216,7 +219,10 @@ $('#competency-chart').click(function(event){
 	d3.select("#bullymetric").classed("hidden", true);
 	d3.select("#navBullymetric").classed("active", false);
 	d3.select("#cuentaconmigo").classed("hidden", true);
-	d3.select("#navCuentaConmigo").classed("active", false);	
+	d3.select("#navCuentaConmigo").classed("active", false);
+
+	d3.select("#sociometric-graph").classed("hidden", true);
+	d3.select("#navSociometricGraph").classed("active", false);	
 });
 
 $('#bullymetric-chart').click(function(event){
@@ -228,7 +234,10 @@ $('#bullymetric-chart').click(function(event){
 	d3.select("#bullymetric").classed("hidden", false);
 	d3.select("#navBullymetric").classed("active", true);
 	d3.select("#cuentaconmigo").classed("hidden", true);
-	d3.select("#navCuentaConmigo").classed("active", false);	
+	d3.select("#navCuentaConmigo").classed("active", false);
+
+	d3.select("#sociometric-graph").classed("hidden", true);
+	d3.select("#navSociometricGraph").classed("active", false);	
 });
 
 $('#cuentaconmigo-chart').click(function(event){
@@ -240,7 +249,25 @@ $('#cuentaconmigo-chart').click(function(event){
 	d3.select("#bullymetric").classed("hidden", true);
 	d3.select("#navBullymetric").classed("active", false);
 	d3.select("#cuentaconmigo").classed("hidden", false);
-	d3.select("#navCuentaConmigo").classed("active", true);	
+	d3.select("#navCuentaConmigo").classed("active", true);
+
+	d3.select("#sociometric-graph").classed("hidden", true);
+	d3.select("#navSociometricGraph").classed("active", false);	
+});
+
+$('#sociometricgraph-chart').click(function(event){
+	event.preventDefault();
+	d3.select("#bulletchart").classed("hidden", true);
+	d3.select("#navBullying").classed("active", false);
+	d3.select("#radar-chart").classed("hidden", true);
+	d3.select("#navCompetency").classed("active", false);
+	d3.select("#bullymetric").classed("hidden", true);
+	d3.select("#navBullymetric").classed("active", false);
+	d3.select("#cuentaconmigo").classed("hidden", true);
+	d3.select("#navCuentaConmigo").classed("active", false);
+
+	d3.select("#sociometric-graph").classed("hidden", false);
+	d3.select("#navSociometricGraph").classed("active", true);	
 });
 
 
@@ -535,6 +562,19 @@ function graph(json) {
 				$('#neap').html(d.surveyBullymetric.neap.toFixed(1));
 				$('#igap').html(d.surveyBullymetric.igap.toFixed(1));
 				$('#imap').html(d.surveyBullymetric.imap.toFixed(1));
+
+				$('#sociometric_sp').html(d.sociometricGraph._sp.toFixed(2));
+				$('#sociometric_sn').html(d.sociometricGraph._sn.toFixed(2));
+				$('#sociometric_ep').html(d.sociometricGraph._ep.toFixed(2));
+				$('#sociometric_en').html(d.sociometricGraph._en.toFixed(2));
+				$('#sociometric_rp').html(d.sociometricGraph._rp.toFixed(2));
+				$('#sociometric_rn').html(d.sociometricGraph._rn.toFixed(2));
+				$('#sociometric_os').html(d.sociometricGraph._os.toFixed(2));
+				$('#sociometric_pop').html(d.sociometricGraph._pop.toFixed(2));
+				$('#sociometric_ant').html(d.sociometricGraph._ant.toFixed(2));
+				$('#sociometric_expPlus').html(d.sociometricGraph._expPlus.toFixed(2));
+				$('#sociometric_expMinus').html(d.sociometricGraph._expMinus.toFixed(2));
+				$('#sociometric_ca').html(d.sociometricGraph._ca.toFixed(2));
 				
 				d3.select("#bulletchart").classed("hidden", false);
 				d3.select("#bullying-chart").attr("xlink:href", "");
@@ -544,7 +584,9 @@ function graph(json) {
 				d3.select("#bullymetric").classed("hidden", true);
 				d3.select("#navBullymetric").classed("active", false);	
 				d3.select("#cuentaconmigo").classed("hidden", true);
-				d3.select("#navCuentaConmigo").classed("active", false);				
+				d3.select("#navCuentaConmigo").classed("active", false);
+				d3.select("#sociometric-graph").classed("hidden", true);
+				d3.select("#navSociometricGraph").classed("active", false);				
 				
 				d3.select("#tooltip").classed("hidden", false);				
 

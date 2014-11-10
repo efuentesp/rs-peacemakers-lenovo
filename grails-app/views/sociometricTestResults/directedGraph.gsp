@@ -238,6 +238,7 @@
 							<li id="navBullymetric"><a id="bullymetric-chart">Bullymetrica</a></li>
 							<li id="navCompetency"><a id="competency-chart">Competencias</a></li>
 							<li id="navCuentaConmigo"><a id="cuentaconmigo-chart">Cuenta Conmigo</a></li>
+							<li id="navSociometricGraph"><a id="sociometricgraph-chart">Índices Sociometricos</a></li>
 					    </ul>
 				    </div>
 				    <br>
@@ -296,6 +297,64 @@
 						<g:hiddenField id= "descriptionEmpatia" name="descriptionEmpatia" value="" />
 						<g:hiddenField id= "descriptionAPI" name="descriptionAPI" value="" />
 					</div>
+
+					<div id="sociometric-graph" class="hidden">
+						<h5>Índices Sociometricos</h5>
+						<table class="table table-condensed table-bordered" >
+							<!-- <caption>Bullymetrica</caption> -->
+							<tbody>
+								<tr>
+									<td>Status de elecciones</td>
+									<td><span id="sociometric_sp">*</span></td>
+								</tr>
+								<tr>
+									<td>Status de rechazos</td>
+									<td><span id="sociometric_sn">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansividad positiva</td>
+									<td><span id="sociometric_ep">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansividad negativa</td>
+									<td><span id="sociometric_en">*</span></td>
+								</tr>
+								<tr>
+									<td>Relaciones recíprocas</td>
+									<td><span id="sociometric_rp">*</span></td>
+								</tr>
+								<tr>
+									<td>Rechazos recíprocos</td>
+									<td><span id="sociometric_rn">*</span></td>
+								</tr>
+								<tr>
+									<td>Oposición de sentimientos</td>
+									<td><span id="sociometric_os">*</span></td>
+								</tr>
+								<tr>
+									<td>Popularidad</td>
+									<td><span id="sociometric_pop">*</span></td>
+								</tr>
+								<tr>
+									<td>Antipatía</td>
+									<td><span id="sociometric_ant">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansión +</td>
+									<td><span id="sociometric_expPlus">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansión -</td>
+									<td><span id="sociometric_expMinus">*</span></td>
+								</tr>
+								<tr>
+									<td>Conexión Afectiva</td>
+									<td><span id="sociometric_ca">*</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
 				</div>
 				
 				<div style="width: 100%">
