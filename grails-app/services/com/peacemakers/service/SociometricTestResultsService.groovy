@@ -267,10 +267,14 @@ class SociometricTestResultsService {
 					if (predecessorsYes) {
 						joinYesYes = successorsYes.intersect(predecessorsYes)
 						joinNoYes = successorsNo.intersect(predecessorsYes)
+						println "joinYesYes: ${joinYesYes}"
+						println "joinNoYes: ${joinNoYes}"
 					}
 					if (predecessorNo) {
 						joinNoNo = successorsNo.intersect(predecessorNo)
 						joinYesNo = successorsYes.intersect(predecessorNo)
+						println "joinNoNo: ${joinNoNo}"
+						println "joinYesNo: ${joinYesNo}"
 					}
 
 					def sp = graphClassmateWantYes.inDegree(v)
@@ -329,7 +333,7 @@ class SociometricTestResultsService {
 			classroomGraph = [ id: socialGroupId, _ia: ia, _id: id, _ic: ic, _is: iis ]
 		}
 
-		//println classroomGraph
+		println classroomGraph
 /*		println "IA=${ia}, ID=${id}, IC=${ic}, IS=${iis}"*/
 
 /*		println ">>>> Successors"
@@ -419,7 +423,9 @@ class SociometricTestResultsService {
 		
 		//println linkArray
 		
-		def datax = [ nodes: groupMemberArray, links: linkArray ]
+		def classroom = [classroomGraph: classroomGraph]
+
+		def datax = [ nodes: groupMemberArray, links: linkArray, classroom: classroom ]
 		//println datax
 
 		return datax

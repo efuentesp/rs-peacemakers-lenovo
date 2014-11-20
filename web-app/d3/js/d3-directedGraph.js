@@ -153,7 +153,6 @@ $('input[name="type"]').change(function() {
 	$('#bullyingSelect').removeAttr('disabled');
 	$("#loading").html('<img width="200" height="200" alt="Espera un momento..." src="/rs-peacemakers/static/images/spinner8.gif">');
 	d3.json($('#restURI').val() + type[0] + "?type=" + type[1], graph);
-
 });
 
 $('#bullyingSelect').change(function() {
@@ -693,8 +692,13 @@ function graph(json) {
 	    return "translate(" + d.x + "," + d.y + ")";
 	  });
 	  */
-
 	}
+
+	// Sociometric Indexes
+	$('#association_index').html(data.classroom.classroomGraph._ia.toFixed(2));
+	$('#dissotiation_index').html(data.classroom.classroomGraph._id.toFixed(2));
+	$('#coherence_index').html(data.classroom.classroomGraph._ic.toFixed(2));
+	$('#social_intensity_index').html(data.classroom.classroomGraph._is.toFixed(2));
 
 }
 

@@ -215,6 +215,47 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftPanel" href="#collapseThree">
+								<g:message code="sociometric_indexes.title" default="Sociometric Indexes" />
+							</a>
+						</div>
+						<div id="collapseThree" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td><g:message code="sociometric_indexes.ia" default="Association Index (AI)" /></td>
+											<td>
+												<span id="association_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.id" default="Dissociation Index (DI)" /></td>
+											<td>
+												<span id="dissotiation_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.ic" default="Coherence Index (CI)" /></td>
+											<td>
+												<span id="coherence_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.is" default="Social Intensity Index (SI)" /></td>
+											<td>
+												<span id="social_intensity_index">0.0</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
 				</div>
 					
 			</div> <!-- span3 -->
