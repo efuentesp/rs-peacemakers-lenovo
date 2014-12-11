@@ -116,7 +116,7 @@ class SociometricTestResultsService {
 			//println "c: ${c}"
 			if (c.criteria.code == "bullying") {
 				def t = c.tests[c.tests.size()-1]
-				println("t="+t)
+				//println("t="+t)
 				if (bullying) {
 					c.tests.each { x->
 						if (x.test.id == bullying.toLong()) {
@@ -129,7 +129,8 @@ class SociometricTestResultsService {
 					t.results.each { m->
 						//println "m: ${m}"
 						def maxResult = m.results.max { it.percentage }
-						results << [id: m.groupMember.id, result: [criteriaResponse: g.message(code: maxResult.criteriaResponse.question), color: maxResult.criteriaResponse.rgbHex, percentage:maxResult.percentage]]
+						println "------> ${maxResult}"
+						results << [id: m.groupMember.id, result: [criteriaResponse: g.message(code: maxResult.criteriaResponse.question), color: maxResult.criteriaResponse.rgbHex, percentage:maxResult.percentage, responseOptions: maxResult.responseOptions]]
 					}
 					//println "results: ${results}"
 				//}
@@ -206,7 +207,153 @@ class SociometricTestResultsService {
 		//println sociometricTest
 		//println sociometricTestResultsx
 
-		
+		// -------------------------------------------------------------------------------------------------------------------
+
+		Graph graphClassmateWantYes = new DirectedSparseMultigraph<Node, Link>()
+		Graph graphClassmateWantNo = new DirectedSparseMultigraph<Node, Link>()
+
+		def vertex = []
+		groupMembers.each { v ->
+			vertex << new Node(v.id, v.person.firstName, "${v.person.firstSurname} ${v.person.secondSurname}")
+		}
+		//println "Vertex: ${vertex}"
+
+		def fromVertex, toVertex
+		def edge = []
+		sociometricTestResults.eachWithIndex { e, i ->
+			//println "[${i}] ${e}"
+			fromVertex = vertex.findIndexOf {
+				it.id == e.fromGroupMember.id
+			}
+			toVertex = vertex.findIndexOf {
+				it.id == e.toGroupMember.id
+			}
+			if (e.sociometricCriteriaResponse.question == 'classmate_want_yes') {
+			 graphClassmateWantYes.addEdge(new Link(i, 0, 0), vertex[fromVertex], vertex[toVertex])
+			}
+			if (e.sociometricCriteriaResponse.question == 'classmate_want_no') {
+			 graphClassmateWantNo.addEdge(new Link(i, 0, 0), vertex[fromVertex], vertex[toVertex])
+			}
+		}
+		//println "Graph: ${graphClassmateWantYes.toString()}"
+		//println "Graph: ${graphClassmateWantNo.toString()}"
+
+		def np = graphClassmateWantYes.getVertexCount() 
+		def nn = graphClassmateWantNo.getVertexCount()
+		//println "${np} ${nn}"
+
+		def sociometricGraph = []
+		def classroomGraph = [ id: 0, _ia: 0, _id: 0, _ic: 0, _is: 0 ]
+
+		if (np > 0) {
+			def sumRp=0, sumRn=0, sumSp=0, sumSn=0
+			vertex.each { v->
+				println "${v} ${v.firstName} ${v.lastName}"
+				def successorsYes = graphClassmateWantYes.getSuccessors(v)
+				//successorsYes = successorsYes ? successorsYes : []
+				def successorsNo = graphClassmateWantNo.getSuccessors(v)
+				//successorsNo = successorsNo ? successorsNo : []
+				println "successorsYes: ${successorsYes}"
+				println "successorsNo: ${successorsNo}"
+
+				def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
+				//predecessorsYes = predecessorsYes ? predecessorsYes : []
+				def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+				//predecessorNo = predecessorNo ? predecessorNo : []
+				println "predecessorsYes: ${predecessorsYes}"
+				println "predecessorNo: ${predecessorNo}"
+
+				if (successorsYes != null && successorsNo != null && predecessorsYes != null && predecessorNo != null) {
+					def joinYesYes=[], joinNoNo=[], joinYesNo=[], joinNoYes=[]
+					if (predecessorsYes) {
+						joinYesYes = successorsYes.intersect(predecessorsYes)
+						joinNoYes = successorsNo.intersect(predecessorsYes)
+						println "joinYesYes: ${joinYesYes}"
+						println "joinNoYes: ${joinNoYes}"
+					}
+					if (predecessorNo) {
+						joinNoNo = successorsNo.intersect(predecessorNo)
+						joinYesNo = successorsYes.intersect(predecessorNo)
+						println "joinNoNo: ${joinNoNo}"
+						println "joinYesNo: ${joinYesNo}"
+					}
+
+					def sp = graphClassmateWantYes.inDegree(v)
+					def sn = graphClassmateWantNo.inDegree(v)
+					def ep = graphClassmateWantYes.outDegree(v)
+					def en = graphClassmateWantNo.outDegree(v)
+					def rp = joinYesYes.size()
+					def rn = joinNoNo.size()
+					def os = joinYesNo.size() + joinNoYes.size()
+
+					sumRp += rp
+					sumRn += rn
+					sumSp += sp
+					sumSn += sn
+
+					def pop=0, expPlus=0
+					if (np > 1) {
+						pop = sp / (np - 1)
+						expPlus = ep / (np - 1)
+					}
+
+					def ant=0, expMinus=0
+					if (nn > 1) {
+						ant = sn / (nn - 1)
+						expMinus = en / (nn - 1)
+					}
+
+					def ca=0
+					if (sp > 0) {
+						ca = rp / sp
+					}
+
+					def sGraph = [ id: v.id, _sp: sp, _sn: sn, _ep: ep, _en: en, _rp: rp, _rn: rn, _os: os,
+																_pop: pop, _ant: ant, _expPlus: expPlus, _expMinus: expMinus, _ca: ca ]
+					sociometricGraph << sGraph
+					println sGraph
+				}
+	/*			println "${v} : Sp=${sp}, Sn=${sn}, Ep=${ep}, En=${en}, Rp=${rp}, Rn=${rn}, Os=${os}"
+				println "       Pop=${pop}, Ant=${ant}, Exp+=${expPlus}, Exp-=${expMinus}, CA=${ca}"*/
+			}
+			//println sociometricGraph
+
+			def ia=0, iis=0
+			if (np > 1) {
+				ia = sumRp / (np * (np - 1))
+				iis = (sumSp + sumSn) / (np - 1)
+			}
+
+			def id=0
+			if (nn > 0) {
+				id = sumRn / (nn * (nn - 1))
+			}
+			
+			def ic = sumRn / sumSp
+
+			classroomGraph = [ id: socialGroupId, _ia: ia, _id: id, _ic: ic, _is: iis ]
+		}
+
+		println classroomGraph
+/*		println "IA=${ia}, ID=${id}, IC=${ic}, IS=${iis}"*/
+
+/*		println ">>>> Successors"
+		vertex.each { v->
+			def successorsYes = graphClassmateWantYes.getSuccessors(v)
+			def predecessorNo = graphClassmateWantNo.getPredecessors(v)
+			def joinYesNo = successorsYes.intersect(predecessorNo)
+			println "${v} : ${successorsYes} : ${predecessorNo} = ${joinYesNo}"
+		}
+
+		println ">>>> Predecesors"
+		vertex.each { v->
+			def predecessorsYes = graphClassmateWantYes.getPredecessors(v)
+			def successorsNo = graphClassmateWantNo.getSuccessors(v)
+			def joinNoYes = predecessorsYes.intersect(successorsNo)
+			println "${v} : ${predecessorsYes} : ${successorsNo} = ${joinNoYes}"
+		}*/
+
+		// -------------------------------------------------------------------------------------------------------------------
 
 		def i = 1
 		def groupMemberArray = []
@@ -224,6 +371,15 @@ class SociometricTestResultsService {
 			def cuentaconmigoTestIndex = surveyCuentaConmigoGroupMemberTotal.findIndexOf {
 				it.groupMember == groupMember
 			}
+
+			def sociometricGraphMember = sociometricGraph.find {
+				if (it.id == groupMember.id) {
+					return it
+				}
+				return false
+			}
+			//println sociometricGraphMember
+
 			//println "---> ${groupMember} ${surveyGroupMemberTotal[competencyTestIndex]}"
 			groupMemberArray << [id: groupMember.id,
 								name: groupMember.getFullName(),
@@ -233,6 +389,8 @@ class SociometricTestResultsService {
 								surveyBullymetric: surveyBullymetricGroupMemberTotal ? surveyBullymetricGroupMemberTotal[bullymetricTestIndex].bullymetric : [neap: 0, igap:0, imap: 0],
 								surveyCompetency: surveyGroupMemberTotal ? surveyGroupMemberTotal[competencyTestIndex].competency : [f1: 0, f2:0, f3: 0, f4: 0],
 								surveyCuentaconmigo: surveyCuentaConmigoGroupMemberTotal? surveyCuentaConmigoGroupMemberTotal[cuentaconmigoTestIndex].cuentaconmigo : [sumCongruencia: 0, descriptionCongruencia: '', sumEmpatia: 0, descriptionEmpatia: '', sumAPI: 0, descriptionAPI: ''],
+								sociometricGraph: (sociometricGraphMember ? sociometricGraphMember : [ id: groupMember.id, _sp: 0, _sn: 0, _ep: 0, _en: 0, _rp: 0, _rn: 0, _os: 0,
+																																											 _pop: 0, _ant: 0, _expPlus: 0, _expMinus: 0, _ca: 0 ] ),
 								display: true]
 		}
 		
@@ -266,7 +424,9 @@ class SociometricTestResultsService {
 		
 		//println linkArray
 		
-		def datax = [ nodes: groupMemberArray, links: linkArray ]
+		def classroom = [classroomGraph: classroomGraph]
+
+		def datax = [ nodes: groupMemberArray, links: linkArray, classroom: classroom ]
 		//println datax
 
 		return datax

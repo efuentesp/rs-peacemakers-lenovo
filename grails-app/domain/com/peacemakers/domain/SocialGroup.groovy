@@ -47,7 +47,7 @@ class SocialGroup {
 	User admin
 	User assistant
 	
-    static constraints = {
+  static constraints = {
 		name (blank: false)
 		parent (nullable: true)
 		groupType (nullable: false)
@@ -59,5 +59,5 @@ class SocialGroup {
 		groupMembers(nullable: true)
 		admin(nullable: true)
 		assistant(nullable: true)
-    }
+  }
 }

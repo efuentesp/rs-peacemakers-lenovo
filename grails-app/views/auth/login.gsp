@@ -35,7 +35,7 @@
 								<span class="add-on">
 									<i class="icon-user"></i>
 								</span>
-								<input type="text" name="username" value="${username}" class="input-large"/>
+								<input type="text" name="username" value="${username}" class="input-large" autofocus="true" />
 							</div>
 						</div>
 					</div>
