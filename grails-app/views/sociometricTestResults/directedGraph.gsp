@@ -10,10 +10,6 @@
 		<title><g:message code="sociometricTestResults.directedGraph.header" default="Sociogram" /></title>
 	
 		<link rel="stylesheet" href="${resource(dir: 'd3/css', file: 'd3.css')}"> 
-	
-		<script src="${resource(dir: 'd3', file: 'd3.v3.js')}"></script>
-		<script src="${resource(dir: 'd3', file: 'bullet.js')}"></script>
-		<script src="${resource(dir: 'd3', file: 'radar-chart.js')}"></script>
 
 		<style type="text/css">
 		
@@ -96,20 +92,53 @@
 			text-align: center;
 		}
 		
-			.bullet { font: 12px sans-serif; }
-			.bullet .marker { stroke: #000; stroke-width: 2px; }
-			.bullet .tick line { stroke: #666; stroke-width: .5px; }
-			.bullet .range.s0 { fill: #eee; }
-			.bullet .range.s1 { fill: #ddd; }
-			.bullet .range.s2 { fill: #ccc; }
-			.bullet .range.s3 { fill: #bbb; }
-			.bullet .range.s4 { fill: #aaa; }
-			.bullet .measure.s0 { fill: lightsteelblue; }
-			.bullet .measure.s1 { fill: steelblue; }
-			//.bullet .measure.s1 { fill: steelblue; }
-			.bullet .title { font-size: 14px; font-weight: bold; }
-			.bullet .subtitle { fill: #666; }	
-		
+		.bullet { font: 12px sans-serif; }
+		.bullet .marker { stroke: #000; stroke-width: 2px; }
+		.bullet .tick line { stroke: #666; stroke-width: .5px; }
+		.bullet .range.s0 { fill: #eee; }
+		.bullet .range.s1 { fill: #ddd; }
+		.bullet .range.s2 { fill: #ccc; }
+		.bullet .range.s3 { fill: #bbb; }
+		.bullet .range.s4 { fill: #aaa; }
+		.bullet .measure.s0 { fill: lightsteelblue; }
+		.bullet .measure.s1 { fill: steelblue; }
+		//.bullet .measure.s1 { fill: steelblue; }
+		.bullet .title { font-size: 14px; font-weight: bold; }
+		.bullet .subtitle { fill: #666; }	
+
+		.bullet-option { font: 12px sans-serif; }
+		.bullet-option .marker { stroke: #000; stroke-width: 2px; }
+		.bullet-option .tick line { stroke: #666; stroke-width: .5px; }
+		.bullet-option .range.s0 { fill: #eee; }
+		.bullet-option .range.s1 { fill: #ddd; }
+		.bullet-option .range.s2 { fill: #ccc; }
+		.bullet-option .range.s3 { fill: #bbb; }
+		.bullet-option .range.s4 { fill: #aaa; }
+		.bullet-option .measure.s0 { fill: lightsteelblue; }
+		.bullet-option .measure.s1 { fill: steelblue; }
+		.bullet-option .title-option { font-size: 14px; font-weight: bold; }
+		.bullet-option .subtitle-option { fill: #666; }	
+
+		.progress-bar {
+		  background-color: whiteSmoke;
+		  border-radius: 2px;
+		  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+
+		  width: 250px;
+		  height: 20px;
+		  
+		  position: relative;
+		  display: block;
+		}
+		  
+		.progress-bar > span {
+		  background-color: blue;
+		  border-radius: 2px;
+
+		  display: block;
+		  text-indent: -9999px;
+		}
+
 		</style>
 
 	</head>
@@ -286,7 +315,12 @@
 					
 					<div id="bulletchart">
 						<h5>Ambiente Relacional</h5>
+						<div id="bulletchart-svg"></div>
+						<g:hiddenField id= "bullyingOptionTitle" name="bullyingOptionTitle" value="" />
+						<g:hiddenField id= "bullyingOptionSubtitle" name="bullyingOptionSubtitle" value="" />
+						<div id="bulletchartdetail-svg"></div>
 					</div>
+
 					<div id="radar-chart" class="hidden">
 						<h5>Evaluación por Competencias</h5>
 						<table class="table table-condensed table-bordered" >
@@ -309,6 +343,7 @@
 							</tbody>
 						</table>				
 					</div>
+
 					<div id="bullymetric" class="hidden">
 						<h5>Bullymetrica</h5>
 						<table class="table table-condensed table-bordered" >
@@ -329,6 +364,7 @@
 							</tbody>
 						</table>
 					</div>
+
 					<div id="cuentaconmigo" class="hidden">
 						<h5>Cuenta Conmigo</h5>
 						<g:hiddenField id= "sumCongruencia" name="sumCongruencia" value="0" />
@@ -447,12 +483,17 @@
 				</div>
 			
 			</div> <!-- span9 -->
-			
-			<script src="${resource(dir: 'd3/js', file: 'd3-directedGraph.js')}"></script>
-			<script src="${resource(dir: 'js', file: 'jquery.json-2.4.min.js')}"></script>
+
 			
 
 		</div>		
 	
+		<script src="${resource(dir: 'd3', file: 'd3.v3.js')}"></script>
+		<script src="${resource(dir: 'd3', file: 'bullet.js')}"></script>
+		<script src="${resource(dir: 'd3', file: 'radar-chart.js')}"></script>
+
+		<script src="${resource(dir: 'd3/js', file: 'd3-directedGraph.js')}"></script>
+		<script src="${resource(dir: 'js', file: 'jquery.json-2.4.min.js')}"></script>
+
 	</body>
 </html>

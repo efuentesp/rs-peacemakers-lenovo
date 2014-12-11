@@ -129,7 +129,8 @@ class SociometricTestResultsService {
 					t.results.each { m->
 						//println "m: ${m}"
 						def maxResult = m.results.max { it.percentage }
-						results << [id: m.groupMember.id, result: [criteriaResponse: g.message(code: maxResult.criteriaResponse.question), color: maxResult.criteriaResponse.rgbHex, percentage:maxResult.percentage]]
+						println "------> ${maxResult}"
+						results << [id: m.groupMember.id, result: [criteriaResponse: g.message(code: maxResult.criteriaResponse.question), color: maxResult.criteriaResponse.rgbHex, percentage:maxResult.percentage, responseOptions: maxResult.responseOptions]]
 					}
 					//println "results: ${results}"
 				//}

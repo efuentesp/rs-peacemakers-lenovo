@@ -1,6 +1,6 @@
 var colorScheme = 'rbow2';
 
-var data, graph, chart, chartcc, bulletChart, bulletChartcc, path, node, circle, text, nodeToggle = false;
+var data, graph, chart, chartcc, bulletChart, chartOption, bullyingBulletOptionsChart, bulletChartcc, path, node, circle, text, nodeToggle = false;
 
 var w = 960,
 	h = 500,
@@ -50,7 +50,49 @@ svg.append("svg:defs").selectAll("marker.arrow")
 d3.select("#graph").classed(colorScheme, true);
 //d3.json($('#restURI').val(), graph);
 bulletChart();
+bullyingOptionsChart();
 cuentaconmigoChart();
+
+function bullyingOptionsChart() {
+	//console.log("Bullying detail voting");
+	var title = $('#bullyingOptionTitle').val();
+	var subtitle = $('#bullyingOptionSubtitle').val();
+	
+	var data = [{"title": title, "subtitle": subtitle, "ranges": [30, 100], "measures": [0, 0], "markers":[0]}];
+	
+	var margin = {top: 40, right: 10, bottom: 40, left: 10},
+    	width = 280 - margin.left - margin.right,
+    	height = 100 - margin.top - margin.bottom;
+
+	chartOption = d3.bullet()
+		.width(width)
+		.height(height);
+	
+	bullyingBulletOptionsChart = d3.select("#bulletchartdetail-svg").selectAll("svg")
+			.data(data)
+		.enter().append("svg")
+    		.attr("class", "bullet-option")
+    		.attr("width", width + margin.left + margin.right)
+    		.attr("height", height + margin.top + margin.bottom)
+    	.append("g")
+    		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    	.call(chartOption);			
+
+	var title = bullyingBulletOptionsChart.append("g")
+		//.style("text-anchor", "end")
+		.attr("transform", "translate(0, -25)");
+		//.attr("transform", "translate(-6," + height / 2 + ")");
+	
+	title.append("text")
+    	.attr("class", "title-option")
+      	.text(function(d) { return d.title; });
+
+	title.append("text")
+	  	.attr("class", "subtitle-option")
+	  	.attr("dy", "1.3em")
+	  	.attr("id", function(d, i){ var result = "subtitle_opt_"+i; return result; })
+	  	.text(function(d) { return d.subtitle; });	
+}
 
 function bulletChart() {
 	
@@ -64,7 +106,7 @@ function bulletChart() {
 		.width(width)
 		.height(height);
 	
-	bulletChart = d3.select("#bulletchart").selectAll("svg")
+	bulletChart = d3.select("#bulletchart-svg").selectAll("svg")
 			.data(data)
 		.enter().append("svg")
     		.attr("class", "bullet")
@@ -520,6 +562,34 @@ function graph(json) {
 					.style("fill", function(d) { return edgeSelected.result.color; });
 				var data = [{"ranges": [30, 100], "measures": [percentage, percentage], "markers":[percentage]}];
 				bulletChart.data(data).call(chart.duration(1000));
+				//console.log(edgeSelected);
+
+				//console.log(edgeSelected.result.responseOptions);
+				var percentageOption = 0;
+				var bullyingOption = '';
+				var dataOption = [];
+				if (edgeSelected.result.responseOptions) {
+					if (edgeSelected.result.responseOptions.length > 0) {
+						percentageOption = edgeSelected.result.responseOptions[0].percentage;
+						bullyingOption = edgeSelected.result.responseOptions[0].question;
+					}
+				}
+				dataOption.push({"title": percentageOption, "subtitle": bullyingOption, "ranges": [30, 100], "measures": [percentageOption, percentageOption], "markers":[percentageOption]});
+				d3.select(".title-option")
+					.text(percentageOption.toFixed(1)+"%");
+				d3.select(".subtitle-option")
+					.text(bullyingOption);
+				d3.select(".bullet-option .measure.s1")
+					.style("fill", function(d) { return edgeSelected.result.color; });
+/*				var datao = [];
+				edgeSelected.result.responseOptions.forEach(function(element, index, array) {
+					datao.push({"title": element.question, "subtitle": element.count, "ranges": [30, 100], "measures": [element.percentage, element.percentage], "markers":[element.percentage]});
+				});*/
+				//console.log(datao);
+				console.log(d);
+				$('#bullyingOptionTitle').val(percentageOption);
+				$('#bullyingOptionSubtitle').val(bullyingOption);
+				bullyingBulletOptionsChart.data(dataOption).call(chart.duration(1000));
 
 				//console.log(d.surveyCuentaconmigo);
 				
@@ -695,6 +765,7 @@ function graph(json) {
 	}
 
 	// Sociometric Indexes
+	//console.log(data.classroom.classroomGraph)
 	$('#association_index').html(data.classroom.classroomGraph._ia.toFixed(2));
 	$('#dissotiation_index').html(data.classroom.classroomGraph._id.toFixed(2));
 	$('#coherence_index').html(data.classroom.classroomGraph._ic.toFixed(2));

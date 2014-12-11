@@ -17,7 +17,7 @@ class SociometricCriteriaResponseOption {
 	}
 	
 	String toString() {
-		return "<(${id}) ${question}>"
+		return "${question}" // Description used to display question name in kardex in sociometric diagram
 	} 
 
 }
