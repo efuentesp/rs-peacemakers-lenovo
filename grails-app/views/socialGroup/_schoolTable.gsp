@@ -12,7 +12,7 @@
 			<g:each in="${socialGroupList}" status="i" var="socialGroupBean">
 			<tr>
 				<td>
-					<a href="${createLink(uri: "/socialGroup/${action}Edit")}/${fieldValue(bean: socialGroupBean, field: "id")}"><strong>${fieldValue(bean: socialGroupBean, field: "name")}</strong></a>
+					<a href="${createLink(uri: "/socialGroup/${action}Edit")}/${socialGroupBean.id}"><strong>${fieldValue(bean: socialGroupBean, field: "name")}</strong></a>
 					<g:set var="groupCatagory" value="socialGroup.groupCategory.${socialGroupBean?.groupCategory.toString()}.label" />
 					<g:set var="defaultGroupCatagory" value="${socialGroupBean?.groupCategory.toString()}" />
 					<p class="muted"><g:message code="${groupCatagory}" default="${defaultGroupCatagory}"/></p>
@@ -28,7 +28,7 @@
 	
 					<div class="btn-toolbar" style="margin: 0;">
 						<div class="btn-group">
-							<a href="${createLink(uri: "/socialGroup/groupList")}?school=${fieldValue(bean: socialGroupBean, field: "id")}&city=${city.id}&country=${country.id}" class="btn btn-success">
+							<a href="${createLink(uri: "/socialGroup/groupList")}?school=${socialGroupBean.id}&city=${city.id}&country=${country.id}" class="btn btn-success">
 								<i class="icon-book icon-white"></i>
 								<g:message code="socialGroup.groupType.groups.label" default="Groups"/>
 							</a>
@@ -36,9 +36,9 @@
 						<div class="btn-group">
 							<button class="btn dropdown-toggle" data-toggle="dropdown"><g:message code="default.button.action.label" default="Action"/> <span class="caret"></span></button>
 							<ul class="dropdown-menu">
-								<li><a href="${createLink(uri: "/socialGroup/${action}Edit")}/${fieldValue(bean: socialGroupBean, field: "id")}"><i class="icon-edit"></i> <g:message code="default.button.edit.label" default="Edit"/></a></li>
+								<li><a href="${createLink(uri: "/socialGroup/${action}Edit")}/${socialGroupBean.id}"><i class="icon-edit"></i> <g:message code="default.button.edit.label" default="Edit"/></a></li>
 								<!-- <li class="divider"></li> -->
-								<li><a href="${createLink(uri: "/socialGroup/${action}Delete")}/${fieldValue(bean: socialGroupBean, field: "id")}"><i class="icon-trash"></i> <g:message code="default.button.delete.label" default="Delete"/></a></li>
+								<li><a href="${createLink(uri: "/socialGroup/${action}Delete")}/${socialGroupBean.id}"><i class="icon-trash"></i> <g:message code="default.button.delete.label" default="Delete"/></a></li>
 							</ul>
 						</div>
 					</div>						
