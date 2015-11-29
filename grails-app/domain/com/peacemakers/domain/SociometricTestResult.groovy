@@ -12,7 +12,7 @@ class SociometricTestResult {
 	SociometricCriteriaResponse sociometricCriteriaResponse
 	SociometricCriteriaResponseOption sociometricCriteriaResponseOption
 	
-    static constraints = {
+  static constraints = {
 		socialGroup (nullable:false)
 		//sociometricTest (nullable:false)
 		testDate (nullable:false)
@@ -20,5 +20,9 @@ class SociometricTestResult {
 		toGroupMember (nullable:false)
 		sociometricCriteriaResponse (nullable: false)
 		sociometricCriteriaResponseOption (nullable: true)
-    }
+  }
+
+  String toString() {
+  	return "<(${id}) | ${socialGroup} | ${testDate} | ${fromGroupMember} -> ${toGroupMember} | ${sociometricCriteriaResponse} | ${sociometricCriteriaResponseOption}>"
+  }
 }

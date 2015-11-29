@@ -82,10 +82,18 @@
 							</div>
 							
 							<div class="form-actions">
-								<button type="submit" class="btn btn-danger">
-									<i class="icon-trash icon-white"></i>
-									<g:message code="default.button.delete.label" default="Delete"/>
-								</button>
+								<g:if test="${hasResults}">
+									<a href="#" class="btn btn-danger disabled">
+										<i class="icon-trash icon-white"></i>
+										<g:message code="default.button.delete.label" default="Delete"/>
+									</a>
+								</g:if>
+								<g:else>
+									<button type="submit" class="btn btn-danger">
+										<i class="icon-trash icon-white"></i>
+										<g:message code="default.button.delete.label" default="Delete"/>
+									</button>
+								</g:else>
 								<a href="${createLink(uri: "/socialGroup/groupList?school=${school}&period=${period}&stage=${stage}&city=${city}&country=${country}")}" class="btn">
 									<i class="icon-ban-circle"></i>
 									<g:message code="default.button.cancel.label" default="Cancel"/>

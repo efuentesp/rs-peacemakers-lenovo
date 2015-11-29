@@ -6,7 +6,7 @@ import com.peacemakers.domain.GroupMember;
 
 class GroupMemberService {
 
-    def delete(String memberId) {
+  def delete(String memberId) {
 		//println "Group Member delete: ${memberId}"
 		def messages = []
 		def groupMember = GroupMember.get(memberId)
@@ -44,5 +44,5 @@ class GroupMemberService {
 			messages << "default.not.deleted.message"
 			return messages
 		}
-    }
+  }
 }

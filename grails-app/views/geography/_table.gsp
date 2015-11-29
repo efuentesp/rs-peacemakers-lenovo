@@ -15,11 +15,11 @@
 						<td>${fieldValue(bean: geoBean, field: "isoCode")}</td>
 						<td>${fieldValue(bean: geoBean, field: "name")}</td>
 						<td class="link">
-							<a href="${createLink(uri: "/geography/${action}Edit")}/${fieldValue(bean: geoBean, field: "id")}" class="btn btn-success">
+							<a href="${createLink(uri: "/geography/${action}Edit")}/${geoBean.id}" class="btn btn-success">
 								<i class="icon-pencil icon-white"></i>
 								<g:message code="default.button.edit.label" default="Edit"/>
 							</a>
-							<a href="${createLink(uri: "/geography/${action}Delete")}/${fieldValue(bean: geoBean, field: "id")}" class="btn btn-danger">
+							<a href="${createLink(uri: "/geography/${action}Delete")}/${geoBean.id}" class="btn btn-danger">
 								<i class="icon-trash icon-white"></i>
 								<g:message code="default.button.delete.label" default="Delete"/>
 							</a>							

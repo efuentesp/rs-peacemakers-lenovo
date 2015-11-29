@@ -10,10 +10,6 @@
 		<title><g:message code="sociometricTestResults.directedGraph.header" default="Sociogram" /></title>
 	
 		<link rel="stylesheet" href="${resource(dir: 'd3/css', file: 'd3.css')}"> 
-	
-		<script src="${resource(dir: 'd3', file: 'd3.v3.js')}"></script>
-		<script src="${resource(dir: 'd3', file: 'bullet.js')}"></script>
-		<script src="${resource(dir: 'd3', file: 'radar-chart.js')}"></script>
 
 		<style type="text/css">
 		
@@ -96,20 +92,53 @@
 			text-align: center;
 		}
 		
-			.bullet { font: 12px sans-serif; }
-			.bullet .marker { stroke: #000; stroke-width: 2px; }
-			.bullet .tick line { stroke: #666; stroke-width: .5px; }
-			.bullet .range.s0 { fill: #eee; }
-			.bullet .range.s1 { fill: #ddd; }
-			.bullet .range.s2 { fill: #ccc; }
-			.bullet .range.s3 { fill: #bbb; }
-			.bullet .range.s4 { fill: #aaa; }
-			.bullet .measure.s0 { fill: lightsteelblue; }
-			.bullet .measure.s1 { fill: steelblue; }
-			//.bullet .measure.s1 { fill: steelblue; }
-			.bullet .title { font-size: 14px; font-weight: bold; }
-			.bullet .subtitle { fill: #666; }	
-		
+		.bullet { font: 12px sans-serif; }
+		.bullet .marker { stroke: #000; stroke-width: 2px; }
+		.bullet .tick line { stroke: #666; stroke-width: .5px; }
+		.bullet .range.s0 { fill: #eee; }
+		.bullet .range.s1 { fill: #ddd; }
+		.bullet .range.s2 { fill: #ccc; }
+		.bullet .range.s3 { fill: #bbb; }
+		.bullet .range.s4 { fill: #aaa; }
+		.bullet .measure.s0 { fill: lightsteelblue; }
+		.bullet .measure.s1 { fill: steelblue; }
+		//.bullet .measure.s1 { fill: steelblue; }
+		.bullet .title { font-size: 14px; font-weight: bold; }
+		.bullet .subtitle { fill: #666; }	
+
+		.bullet-option { font: 12px sans-serif; }
+		.bullet-option .marker { stroke: #000; stroke-width: 2px; }
+		.bullet-option .tick line { stroke: #666; stroke-width: .5px; }
+		.bullet-option .range.s0 { fill: #eee; }
+		.bullet-option .range.s1 { fill: #ddd; }
+		.bullet-option .range.s2 { fill: #ccc; }
+		.bullet-option .range.s3 { fill: #bbb; }
+		.bullet-option .range.s4 { fill: #aaa; }
+		.bullet-option .measure.s0 { fill: lightsteelblue; }
+		.bullet-option .measure.s1 { fill: steelblue; }
+		.bullet-option .title-option { font-size: 14px; font-weight: bold; }
+		.bullet-option .subtitle-option { fill: #666; }	
+
+		.progress-bar {
+		  background-color: whiteSmoke;
+		  border-radius: 2px;
+		  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+
+		  width: 250px;
+		  height: 20px;
+		  
+		  position: relative;
+		  display: block;
+		}
+		  
+		.progress-bar > span {
+		  background-color: blue;
+		  border-radius: 2px;
+
+		  display: block;
+		  text-indent: -9999px;
+		}
+
 		</style>
 
 	</head>
@@ -215,6 +244,47 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftPanel" href="#collapseThree">
+								<g:message code="sociometric_indexes.title" default="Sociometric Indexes" />
+							</a>
+						</div>
+						<div id="collapseThree" class="accordion-body collapse in">
+							<div class="accordion-inner">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td><g:message code="sociometric_indexes.ia" default="Association Index (AI)" /></td>
+											<td>
+												<span id="association_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.id" default="Dissociation Index (DI)" /></td>
+											<td>
+												<span id="dissotiation_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.ic" default="Coherence Index (CI)" /></td>
+											<td>
+												<span id="coherence_index">0.0</span>
+											</td>
+										</tr>
+										<tr>
+											<td><g:message code="sociometric_indexes.is" default="Social Intensity Index (SI)" /></td>
+											<td>
+												<span id="social_intensity_index">0.0</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
 				</div>
 					
 			</div> <!-- span3 -->
@@ -238,13 +308,19 @@
 							<li id="navBullymetric"><a id="bullymetric-chart">Bullymetrica</a></li>
 							<li id="navCompetency"><a id="competency-chart">Competencias</a></li>
 							<li id="navCuentaConmigo"><a id="cuentaconmigo-chart">Cuenta Conmigo</a></li>
+							<li id="navSociometricGraph"><a id="sociometricgraph-chart">Índices Sociometricos</a></li>
 					    </ul>
 				    </div>
 				    <br>
 					
 					<div id="bulletchart">
 						<h5>Ambiente Relacional</h5>
+						<div id="bulletchart-svg"></div>
+						<g:hiddenField id= "bullyingOptionTitle" name="bullyingOptionTitle" value="" />
+						<g:hiddenField id= "bullyingOptionSubtitle" name="bullyingOptionSubtitle" value="" />
+						<div id="bulletchartdetail-svg"></div>
 					</div>
+
 					<div id="radar-chart" class="hidden">
 						<h5>Evaluación por Competencias</h5>
 						<table class="table table-condensed table-bordered" >
@@ -267,6 +343,7 @@
 							</tbody>
 						</table>				
 					</div>
+
 					<div id="bullymetric" class="hidden">
 						<h5>Bullymetrica</h5>
 						<table class="table table-condensed table-bordered" >
@@ -287,6 +364,7 @@
 							</tbody>
 						</table>
 					</div>
+
 					<div id="cuentaconmigo" class="hidden">
 						<h5>Cuenta Conmigo</h5>
 						<g:hiddenField id= "sumCongruencia" name="sumCongruencia" value="0" />
@@ -296,6 +374,64 @@
 						<g:hiddenField id= "descriptionEmpatia" name="descriptionEmpatia" value="" />
 						<g:hiddenField id= "descriptionAPI" name="descriptionAPI" value="" />
 					</div>
+
+					<div id="sociometric-graph" class="hidden">
+						<h5>Índices Sociometricos</h5>
+						<table class="table table-condensed table-bordered" >
+							<!-- <caption>Bullymetrica</caption> -->
+							<tbody>
+								<tr>
+									<td>Status de elecciones</td>
+									<td><span id="sociometric_sp">*</span></td>
+								</tr>
+								<tr>
+									<td>Status de rechazos</td>
+									<td><span id="sociometric_sn">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansividad positiva</td>
+									<td><span id="sociometric_ep">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansividad negativa</td>
+									<td><span id="sociometric_en">*</span></td>
+								</tr>
+								<tr>
+									<td>Relaciones recíprocas</td>
+									<td><span id="sociometric_rp">*</span></td>
+								</tr>
+								<tr>
+									<td>Rechazos recíprocos</td>
+									<td><span id="sociometric_rn">*</span></td>
+								</tr>
+								<tr>
+									<td>Oposición de sentimientos</td>
+									<td><span id="sociometric_os">*</span></td>
+								</tr>
+								<tr>
+									<td>Popularidad</td>
+									<td><span id="sociometric_pop">*</span></td>
+								</tr>
+								<tr>
+									<td>Antipatía</td>
+									<td><span id="sociometric_ant">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansión +</td>
+									<td><span id="sociometric_expPlus">*</span></td>
+								</tr>
+								<tr>
+									<td>Expansión -</td>
+									<td><span id="sociometric_expMinus">*</span></td>
+								</tr>
+								<tr>
+									<td>Conexión Afectiva</td>
+									<td><span id="sociometric_ca">*</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
 				</div>
 				
 				<div style="width: 100%">
@@ -347,12 +483,17 @@
 				</div>
 			
 			</div> <!-- span9 -->
-			
-			<script src="${resource(dir: 'd3/js', file: 'd3-directedGraph.js')}"></script>
-			<script src="${resource(dir: 'js', file: 'jquery.json-2.4.min.js')}"></script>
+
 			
 
 		</div>		
 	
+		<script src="${resource(dir: 'd3', file: 'd3.v3.js')}"></script>
+		<script src="${resource(dir: 'd3', file: 'bullet.js')}"></script>
+		<script src="${resource(dir: 'd3', file: 'radar-chart.js')}"></script>
+
+		<script src="${resource(dir: 'd3/js', file: 'd3-directedGraph.js')}"></script>
+		<script src="${resource(dir: 'js', file: 'jquery.json-2.4.min.js')}"></script>
+
 	</body>
 </html>

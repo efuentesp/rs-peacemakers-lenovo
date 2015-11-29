@@ -47,7 +47,7 @@
 	
 					<div class="btn-toolbar" style="margin: 0;">
 						<div class="btn-group">
-							<a href="${createLink(uri: "/groupMember/list")}/${fieldValue(bean: socialGroupBean?.socialGroup, field: "id")}" class="btn btn-success btn-small">
+							<a href="${createLink(uri: "/groupMember/list")}/${socialGroupBean?.socialGroup.id}" class="btn btn-success btn-small">
 								<i class="icon-group icon-white"></i>
 								<g:message code="groupMember.list.header" default="Group Members"/>
 							</a>
@@ -66,13 +66,13 @@
 							<button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><g:message code="default.button.action.label" default="Action"/> <span class="caret"></span></button>
 							<ul class="dropdown-menu">
 								<!-- 
-								<li><a href="${createLink(uri: "/socialGroupSociometricTest/list")}/${fieldValue(bean: socialGroupBean?.socialGroup, field: "id")}"><i class="icon-comment-alt"></i> <g:message code="socialGroup.sociometricTest.button.activate.label" default="Activate Sociometric Test"/></a></li>
-								<li><a href="${createLink(uri: "/socialGroupSurvey/list")}/${fieldValue(bean: socialGroupBean?.socialGroup, field: "id")}"><i class="icon-check"></i> <g:message code="socialGroup.survey.button.activate.label" default="Activate Survey"/></a></li>
+								<li><a href="${createLink(uri: "/socialGroupSociometricTest/list")}/${socialGroupBean?.socialGroup.id}"><i class="icon-comment-alt"></i> <g:message code="socialGroup.sociometricTest.button.activate.label" default="Activate Sociometric Test"/></a></li>
+								<li><a href="${createLink(uri: "/socialGroupSurvey/list")}/${socialGroupBean?.socialGroup.id}"><i class="icon-check"></i> <g:message code="socialGroup.survey.button.activate.label" default="Activate Survey"/></a></li>
 								<li class="divider"></li>			
 								-->			
-								<li><a href="${createLink(uri: "/schoolAdmin/${action}Edit")}/${fieldValue(bean: socialGroupBean?.socialGroup, field: "id")}"><i class="icon-edit"></i> <g:message code="default.button.edit.label" default="Edit"/></a></li>
+								<li><a href="${createLink(uri: "/schoolAdmin/${action}Edit")}/${socialGroupBean?.socialGroup.id}"><i class="icon-edit"></i> <g:message code="default.button.edit.label" default="Edit"/></a></li>
 								<g:if test="${socialGroupBean?.socialGroup?.groupMembers.size() == 0}">
-									<li><a href="${createLink(uri: "/schoolAdmin/${action}Delete")}/${fieldValue(bean: socialGroupBean?.socialGroup, field: "id")}"><i class="icon-trash"></i> <g:message code="default.button.delete.label" default="Delete"/></a></li>
+									<li><a href="${createLink(uri: "/schoolAdmin/${action}Delete")}/${socialGroupBean?.socialGroup.id}"><i class="icon-trash"></i> <g:message code="default.button.delete.label" default="Delete"/></a></li>
 								</g:if>
 							</ul>
 						</div>

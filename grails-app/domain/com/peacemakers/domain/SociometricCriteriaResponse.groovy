@@ -9,14 +9,18 @@ class SociometricCriteriaResponse {
 	String color
 	String rgbHex
 
-    static constraints = {
+  static constraints = {
 		sequence (nullable: false)
 		question (blank: false, unique: true, matches: "[a-z_]+")
 		color (nullable: false, matches: "[a-z_]+")
 		rgbHex (nullable: false)
-    }
+  }
 	
 	static mapping = {
 		sort sequence: "desc"
+	}
+
+	String toString() {
+		return "<(${id}) ${question}>"
 	}
 }

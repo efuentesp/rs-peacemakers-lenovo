@@ -18,12 +18,15 @@ import com.peacemakers.domain.SocialGroupPeriod;
 import com.peacemakers.domain.SocialGroupStage;
 import com.peacemakers.domain.SocialGroupType;
 import com.peacemakers.domain.SociometricTest;
+import com.peacemakers.domain.SociometricTestResult;
 import com.peacemakers.domain.SurveyAssigned;
+import com.peacemakers.domain.SurveyAnswer;
 import com.peacemakers.security.Role;
 import com.peacemakers.security.User;
 
 class SocialGroupController {
 	def SchoolService
+	def SocialGroupService
 	
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -620,8 +623,25 @@ class SocialGroupController {
 		def stageJSON = SocialGroupStage.list().name as JSON
 		
 		def periodJSON = SocialGroupPeriod.list().name as JSON
+
+		def hasSociometricResults = SociometricTestResult.findAllBySocialGroup(group).size() > 0 ? true : false
+
+		def hasSurveyResults = false
+		group.groupMembers.each { m ->
+			if (m) {
+				if (SurveyAnswer.findAllByGroupMember(m).size() > 0) {
+					hasSurveyResults = true
+				}
+			}
+		}
+
+		def hasResults = hasSociometricResults || hasSurveyResults
+
+		if (hasResults) {
+			flash.message = g.message(code: 'socialGroup.group.delete.cannotdelete', default: 'You cannot delete a Group with Results.')
+		}
 		
-		[stageTree: stageTree, stageJSON: stageJSON, periodJSON: periodJSON, schoolBean: schoolBean, groupBean: group, school: school.id, stage: group.stage.id, period: group.period.id, city: city, country: country, user:user, action: 'group']
+		[stageTree: stageTree, stageJSON: stageJSON, periodJSON: periodJSON, schoolBean: schoolBean, groupBean: group, school: school.id, stage: group.stage.id, period: group.period.id, city: city, country: country, user:user, hasResults: hasResults, action: 'group']
 
 	}
 	
@@ -629,33 +649,39 @@ class SocialGroupController {
 		println "groupRemove: ${params}"
 
 		def group = SocialGroup.get(params.groupId)
-		if (!group) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
-			//println flash.message
+		def messages = SocialGroupService.delete(group.id)
+		if (messages.size() == 0) {
+			redirect(action: "groupList", params: [school: params.school, period: group?.period.id, stage: group?.stage.id, city: params.city, country: params.country])
+		} else {
 			redirect(action: "groupDelete", params: [id: params.groupId])
-			return
-		}
-		
-		if (params.version) {
-			def version = params.version.toLong()
-			if (group.version > version) {
-				group.errors.rejectValue("version", "default.optimistic.locking.failure",
-						  [message(code: 'socialGroup.groupType.school.label', default: 'School')] as Object[],
-						  "Another user has updated this School while you were editing")
-				render(view: "groupEdit", model: [groupBean: group, action:'group'])
-				return
-			}
 		}
 
-		try {
-			group.delete(flush: true)
-			flash.message = message(code: 'default.deleted.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
-			redirect(action: "groupList", params: [school: params.school, period: group?.period.id, stage: group?.stage.id, city: params.city, country: params.country])
-		}
-		catch (Exception e) {
-			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
-			redirect(action: "groupDelete", params: [id: params.groupId])
-		}
+		// if (!group) {
+		// 	flash.message = message(code: 'default.not.found.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
+		// 	//println flash.message
+		// 	redirect(action: "groupDelete", params: [id: params.groupId])
+		// 	return
+		// }
+		
+		// if (params.version) {
+		// 	def version = params.version.toLong()
+		// 	if (group.version > version) {
+		// 		group.errors.rejectValue("version", "default.optimistic.locking.failure",
+		// 				  [message(code: 'socialGroup.groupType.school.label', default: 'School')] as Object[],
+		// 				  "Another user has updated this School while you were editing")
+		// 		render(view: "groupEdit", model: [groupBean: group, action:'group'])
+		// 		return
+		// 	}
+		// }
+
+		// try {
+		// 	group.delete(flush: true)
+		// 	flash.message = message(code: 'default.deleted.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
+		// }
+		// catch (Exception e) {
+		// 	flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'socialGroup.groupType.group.label', default: 'Group'), params.groupId])
+		// 	redirect(action: "groupDelete", params: [id: params.groupId])
+		// }
 	}
 	
 	private def getSocialGroupTree(List groups) {
